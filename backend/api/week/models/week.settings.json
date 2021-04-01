@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weeks",
+  "info": {
+    "name": "week",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "week_number": {
+      "type": "uid"
+    },
+    "session": {
+      "type": "biginteger"
+    },
+    "contestants": {
+      "collection": "contestant"
+    },
+    "episodes": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "contestant": {
+      "via": "week",
+      "model": "contestant"
+    }
+  }
+}
