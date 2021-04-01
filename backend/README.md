@@ -1,6 +1,6 @@
 # Strapi application
 
-Dine With Me Israel DataBase
+Dine With Me Israel Data Base
 
 ### Avilable EndPoints
 
