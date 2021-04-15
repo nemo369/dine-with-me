@@ -12,13 +12,11 @@
   },
   "attributes": {
     "week_number": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "week_number_id"
     },
     "session": {
       "type": "biginteger"
-    },
-    "contestants": {
-      "collection": "contestant"
     },
     "episodes": {
       "type": "richtext"
@@ -29,9 +27,21 @@
     "date": {
       "type": "date"
     },
-    "contestant": {
-      "via": "week",
-      "model": "contestant"
+    "contestants_as_string": {
+      "type": "text"
+    },
+    "week_number_id": {
+      "type": "string"
+    },
+    "art": {
+      "type": "text"
+    },
+    "special_instructions": {
+      "type": "text"
+    },
+    "contestants": {
+      "collection": "contestant",
+      "via": "week"
     }
   }
 }

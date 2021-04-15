@@ -1,0 +1,236 @@
+[
+  {
+    "week_number": "s01w01",
+    "contestants": "חיים מלכי, רונן צור, אורלי יחזקאל, גלי משיח רוסו, אלינור בטאן",
+    "session": 1,
+    "episodes": "1-5",
+    "date": 2012,
+    "description": "תל אביב",
+    "": ""
+  },
+  {
+    "week_number": "s01w02",
+    "contestants": "לילי בן נון, קובי דימנט, חיים קרנדג'י, אינה מדוודב, רונית ליאון",
+    "session": 1,
+    "episodes": "6-10",
+    "date": 2012,
+    "description": "מרכז",
+    "": ""
+  },
+  {
+    "week_number": "s01w03",
+    "contestants": "אילנה וייס, אורן חזן, יוסי והבה, מיכל אדר, ענבל שורר רמתי",
+    "session": 1,
+    "episodes": "11-15",
+    "date": 2012,
+    "description": "שמנים",
+    "": ""
+  },
+  {
+    "week_number": "s01w04",
+    "contestants": "אבינועם אייק ,יורם יסדה, גיל להב, נטלי מימון, שרית אליהו",
+    "session": 1,
+    "episodes": "16-20",
+    "date": 2012,
+    "description": "אזור השרון",
+    "": ""
+  },
+  {
+    "week_number": "s01w05",
+    "contestants": "תמי ,ארז שיינר, ערן לונה, מחמד קרוואן, יעל בנין",
+    "session": 1,
+    "episodes": "21-25",
+    "date": "",
+    "description": "תל אביב",
+    "": ""
+  },
+  {
+    "week_number": "s01w06",
+    "contestants": "יעקוב חיאט,שמירה ינקו-נוריאל, עמית ילין, אילן אורן, נורית בר-לוי",
+    "session": 1,
+    "episodes": "26-30",
+    "date": "",
+    "description": "צפונה, גולן וגליל",
+    "": ""
+  },
+  {
+    "week_number": "s01w07",
+    "contestants": "תרצה נחמני, רינה גולדצוויג ,יואל גאל דור, רמי לאור, יעל בן יוסף",
+    "session": 1,
+    "episodes": "31-15",
+    "date": "",
+    "description": "השפלה",
+    "": ""
+  },
+  {
+    "week_number": "s01w08",
+    "contestants": "רינה לזר, אלי אונגר, אדווה עמר, אפרת וייס, איציק בן עזרי",
+    "session": 1,
+    "episodes": "36-40",
+    "date": "",
+    "description": "באר שבע והסביבה",
+    "": ""
+  },
+  {
+    "week_number": "s01w09",
+    "contestants": "מיקי לבני, מיכל אזלאי, איציק יעקב, ענת דודי, אולריש סאם",
+    "session": 1,
+    "episodes": "41-45",
+    "date": 2012,
+    "description": "ירושלים",
+    "": ""
+  },
+  {
+    "week_number": "s01w10",
+    "contestants": "אמיר בלנק, גאיה קורן, ברוך קון, רחל גרינברג, מור דעי",
+    "session": 1,
+    "episodes": "46-50",
+    "date": "",
+    "description": "מרכז",
+    "": ""
+  },
+  {
+    "week_number": "s02w01",
+    "contestants": "איציק כרסנטי, גדי חפר, שני פלצ'י, אילדיקו מרטון, שמעון חזוט",
+    "session": 2,
+    "episodes": "1-2",
+    "date": "",
+    "description": "חיפה והקריות",
+    "": ""
+  },
+  {
+    "week_number": "s02w02",
+    "contestants": "דניס לוי, חן אברבנאל, יובל אלדמן, בן אבנון, רותם דרוב",
+    "session": 2,
+    "episodes": "3-4",
+    "date": "",
+    "description": "המרכז",
+    "": ""
+  },
+  {
+    "week_number": "s02w03",
+    "contestants": "חנה תורג'מן, אדוארד וייצמן, יעל טרופ ,נתן ליפשיץ, בתאל פרץ",
+    "session": 2,
+    "episodes": "5-6",
+    "date": "",
+    "description": "השפלה",
+    "": ""
+  },
+  {
+    "week_number": "s02w04",
+    "contestants": "משה אלמקייס, מיכל הדי כהן, קארין, שי יוסף, גיטה גואטה",
+    "session": 2,
+    "episodes": "7-8",
+    "date": "",
+    "description": "אוכל כשר",
+    "": ""
+  },
+  {
+    "week_number": "s02w05",
+    "contestants": "דניאל קוץ, רינת סילבסטר, רענן יקותיאל, חגית פטריק, בנימין יעקביאן",
+    "session": 2,
+    "episodes": "9-10",
+    "date": "",
+    "description": "ירושלים",
+    "": "פסלו את דניאל וכל הציונים שלו"
+  },
+  {
+    "week_number": "s02w06",
+    "contestants": "חגי יודן, חן שאבו, אילה גולני ,יוסי חגי, פנינה רמון",
+    "session": 2,
+    "episodes": "11-12",
+    "date": "",
+    "description": "תל אביב",
+    "": "הקונספט היה פלצנים מול עמחה"
+  },
+  {
+    "week_number": "s02w07",
+    "contestants": "הילה מודרה, איריס אברמוביץ', אבנר בן יון, אלון מדר, שרון יוגב",
+    "session": 2,
+    "episodes": "13-14",
+    "date": "",
+    "description": "המרכז",
+    "": ""
+  },
+  {
+    "week_number": "s02w08",
+    "contestants": "אורית שלום, יוסק'ה רובין, חגי קוסקאס, נסיה יחיא, שפרה מזרחי",
+    "session": 2,
+    "episodes": "15-16",
+    "date": "",
+    "description": "השרון",
+    "": ""
+  },
+  {
+    "week_number": "s02w09",
+    "contestants": "נטלי מרציאנו, אבישלום שחף, ערן גלילי, סיגל רז, תומר צור",
+    "session": 2,
+    "episodes": "17-18",
+    "date": "",
+    "description": "הצפון",
+    "": ""
+  },
+  {
+    "week_number": "s02w10",
+    "contestants": "גלי משיח רוסו, גאיה קורן, רמי לאור, יוסי חגי, שני פלצ'י",
+    "session": 2,
+    "episodes": "19-20",
+    "date": "",
+    "description": "קאמבק מנצחים",
+    "": ""
+  },
+  {
+    "week_number": "s03w01",
+    "contestants": "רועי עידן- חגית השמשוני, רונית נוביק - אייל גראד, עבד זיתונא - איסרא זיתונא",
+    "session": 3,
+    "episodes": "1-2",
+    "date": "",
+    "description": "תל אביב",
+    "": ""
+  },
+  {
+    "week_number": "s03w02",
+    "contestants": "חיים גרשון - אצילה גרשון, שמעון נחמני-  יוליה נחמני, דרור תמיר - ליאת זיוון",
+    "session": 3,
+    "episodes": "3-4",
+    "date": "",
+    "description": "מישור החוף הצפוני",
+    "": ""
+  },
+  {
+    "week_number": "s03w03",
+    "contestants": "דורון סעדון- מירי אור סעדון, דוד הכהן-  רון ירושלמי, חיים פרלמן-  קרן פרלמן",
+    "session": 3,
+    "episodes": "5-6",
+    "date": "",
+    "description": "דתיים",
+    "": ""
+  },
+  {
+    "week_number": "s03w04",
+    "contestants": "שניר רובין - ענבל רובין, גו'זף זיתונה - ספיר זיתונה, אסף קובו - עמליה זאבי",
+    "session": 3,
+    "episodes": "7-8",
+    "date": "",
+    "description": "זוגות מעורבים ולהב\"ה",
+    "": ""
+  },
+  {
+    "week_number": "s03w05",
+    "contestants": "ישראל סיליק-  ימית סיליק, ארתור וויט -גו'ל באום, ליאל דבר- ליאור צ'רכי",
+    "session": 3,
+    "episodes": "9-10",
+    "date": "",
+    "description": "פלורנטין וחולון",
+    "": ""
+  },
+  {
+    "week_number": "s03w06",
+    "contestants": "אושר עטיה - הילה עטיה, מוטי גורדון - מירי גורדון, אלעזר קרבסי -שושנה קרבסי",
+    "session": 3,
+    "episodes": "11-12",
+    "date": "",
+    "description": "ירושלים",
+    "": ""
+  }
+]

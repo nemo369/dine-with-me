@@ -53,10 +53,6 @@
     "dessert": {
       "type": "richtext"
     },
-    "week": {
-      "model": "week",
-      "via": "contestant"
-    },
     "relation_type": {
       "type": "string"
     },
@@ -82,6 +78,28 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "week_number": {
+      "type": "integer"
+    },
+    "session_number": {
+      "type": "integer"
+    },
+    "children": {
+      "type": "biginteger"
+    },
+    "at_his_house": {
+      "type": "text"
+    },
+    "special_instructions": {
+      "type": "text"
+    },
+    "art": {
+      "type": "text"
+    },
+    "week": {
+      "via": "contestants",
+      "model": "week"
     }
   }
 }
