@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -6,7 +8,8 @@ export default {
   head: {
     title: 'dine-with-me',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'he',
+      dir: 'rtl',
     },
     meta: [
       { charset: 'utf-8' },
@@ -14,6 +17,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  env: {
+    api: process.env.API_ENDPOINT,
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -32,7 +38,9 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
-
+  tailwindcss: {
+    jit: true,
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
