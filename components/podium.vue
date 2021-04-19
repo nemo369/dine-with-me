@@ -8,16 +8,24 @@
       }`"
     >
       <div v-if="contestant">
-        <small class="mx-4">{{ contestant.score }}</small>
-        <common-sticker :name="contestant.name" src="" />
+        <nuxt-link :to="`contestant/${contestant.id}`">
+          <small class="mx-4">{{ contestant.score }}</small>
+          <common-sticker :name="contestant.name" src="" />
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { slugify } from '../utils/utils'
 export default {
   props: ['conts'],
+  methods: {
+    sluged(p) {
+      return slugify(p)
+    },
+  },
 }
 </script>
 

@@ -18,11 +18,11 @@ export default {
     }
   },
   async fetch() {
-    this.weeks = await fetch(`${process.env.API_ENDPOINT}weeks`).then((res) =>
-      res.json()
-    )
+    this.weeks = await fetch(
+      `${process.env.API_ENDPOINT}weeks?_limit=-1`
+    ).then((res) => res.json())
     this.contestants = await fetch(
-      `${process.env.API_ENDPOINT}contestants`
+      `${process.env.API_ENDPOINT}contestants?_limit=-1`
     ).then((res) => res.json())
   },
   head() {
