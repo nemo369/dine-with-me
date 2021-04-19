@@ -2,11 +2,9 @@
   <section
     class="text-center bg-blue-100 py-10 rounded flex flex-col align-center justify-center"
   >
-    <div class="logo text-9xl">🍔</div>
-    <h1 class="text-5xl NuxtLogo my-3">
-      בואו לאכול איתי ישראל - עונת הסטטיסטיקות
-    </h1>
-    <h2 class="max text-lg">
+    <logo />
+    <h2 class="text-5xl NuxtLogo my-3">עונת הסטטיסטיקות</h2>
+    <p class="max text-lg">
       הקינוח האמיתי של תוכנית הקאלט בגרסתה הישראלית
       <br />
       כולל <strong> סטטיסטיקות ועובדות מורכבות </strong> לאורך
@@ -16,7 +14,7 @@
       <span class="text-blue-900 text-2xl">{{ contestants }}</span>
 
       בשלנים חובבים שאוהבים לארח ואוהבים לנצח <br />
-    </h2>
+    </p>
   </section>
 </template>
 

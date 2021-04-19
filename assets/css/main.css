@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'font';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('~assets/fonts/MPLUSRounded1c-Thin.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'font';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url('~assets/fonts/MPLUSRounded1c-Light.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'font';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('~assets/fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'font';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~assets/fonts/MPLUSRounded1c-Bold.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'font';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('~assets/fonts/MPLUSRounded1c-Black.ttf') format('truetype');
+
+  }
+  
+
+  body{
+  font-family: 'font', sans-serif;
+  font-weight: 300;
+  }
+
+
+  .number{
+    font-size: 4.7rem;
+    font-weight: 400;
+  }

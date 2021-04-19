@@ -1,7 +1,11 @@
 <template>
   <main class="main py-10 px-4 min-h-screen bg-blue-200">
     <welcome :contestants="contestants.length" />
-    <article class="mx-auto"></article>
+    <article class="mx-auto">
+      <genrael :contestants="contestants" :weeks="weeks" />
+      <contestants :contestants="contestants" :weeks="weeks" />
+      <food :contestants="contestants" :weeks="weeks" />
+    </article>
   </main>
 </template>
 
@@ -40,9 +44,4 @@ export default {
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-body {
-  font-family: 'Varela Round', sans-serif;
-}
-</style>
+<style></style>
