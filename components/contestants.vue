@@ -1,6 +1,6 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="flex justify-between gap-3 mb-6">
+    <div class="flex justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
         <ul class="text-2xl flex gap-x-3">
           <li v-for="(value, name) in genders" :key="value">
@@ -10,21 +10,24 @@
       </common-box>
       <common-box title="ממוצע גילים" :number="ages" />
     </div>
-    <div class="flex justify-between gap-3 mb-6">
-      <common-box title="מקום אירוח בארץ" number="x" />
-      <common-box title="ממוצע הציונים" number="x" />
+    <div class="flex justify-between gap-x-8 mb-12">
+      <div>
+        <svg-israel :contestants="contestants"></svg-israel>
+      </div>
     </div>
-    <div class="flex justify-between gap-3 mb-6">
+    <div class="flex justify-between gap-x-8 mb-12">
       <common-box title="המשתתפים הגרועים ביותר">
         <podium
+          color="red"
           :conts="orderByScored.slice(Math.max(orderByScored.length - 3, 1))"
         />
       </common-box>
       <common-box title="המשתתפים הטובים ביותר">
-        <podium :conts="orderByScored.slice(0, 3)" />
+        <podium :conts="orderByScored.slice(0, 3)" color="green" />
       </common-box>
     </div>
-    <div class="flex justify-between gap-3 mb-6">
+    <div class="flex justify-between gap-x-8 mb-12">
+      <common-box title="ממוצע הציון הסופי" :number="avScroe" />
       <common-box title="סדר אירוח vs תוצאה סופית" number="x" />
       <common-box title="משתתפים שנפסלו" number="x" />
     </div>
@@ -48,11 +51,21 @@ export default {
       }, {})
     },
     ages() {
-      const totalAges = this.contestants.reduce(
-        (acc, item) => (item.age ? (acc += +item.age) : acc),
-        0
-      )
-      return totalAges / this.contestants.length
+      let totalContestants = 0
+      const totalAges = this.contestants.reduce((acc, item) => {
+        if (item.age) {
+          totalContestants++
+          acc += +item.age
+        }
+        return acc
+      }, 0)
+      return Math.round(totalAges / totalContestants)
+    },
+    avScroe() {
+      const totalAges = this.contestants.reduce((acc, item) => {
+        return (acc += +item.score)
+      }, 0)
+      return Math.round(totalAges / this.contestants.length)
     },
     orderByScored() {
       if (!this.contestants) return []

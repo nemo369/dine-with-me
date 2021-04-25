@@ -16,7 +16,6 @@ export default {
     const contestant = await fetch(
       `${process.env.API_ENDPOINT}contestants/${params.contestant}`
     ).then((res) => res.json())
-    console.log(`${process.env.API_ENDPOINT}contestants/${params.contestant}`)
     // if (!contestant) {
     //   // TODO: redircet to 404
     //   return this.$nuxt.error({

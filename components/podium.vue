@@ -3,7 +3,7 @@
     <div
       v-for="(contestant, index) in conts"
       :key="index"
-      :class="`bg-green-200 border-green-100 border ${
+      :class="`bg-${color}-400 border-${color}-100 border pb-4 ${
         index ? `h-${index * 3 + 18} order-${index - 1}` : 'h-40 order-1'
       }`"
     >
@@ -20,7 +20,7 @@
 <script>
 import { slugify } from '../utils/utils'
 export default {
-  props: ['conts'],
+  props: ['conts', 'color'],
   methods: {
     sluged(p) {
       return slugify(p)
@@ -29,7 +29,9 @@ export default {
 }
 </script>
 
-<style scoped>
-.podium {
+<style>
+.podium .sticker__name {
+  transform: unset;
+  margin: auto;
 }
 </style>
