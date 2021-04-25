@@ -10,10 +10,8 @@
       </common-box>
       <common-box title="ממוצע גילים" :number="ages" />
     </div>
-    <div class="flex justify-between gap-x-8 mb-12">
-      <div>
-        <svg-israel :contestants="contestants"></svg-israel>
-      </div>
+    <div class="flex justify-center gap-x-8 mb-12">
+      <svg-israel :contestants="contestants"></svg-israel>
     </div>
     <div class="flex justify-between gap-x-8 mb-12">
       <common-box title="המשתתפים הגרועים ביותר">
@@ -29,7 +27,14 @@
     <div class="flex justify-between gap-x-8 mb-12">
       <common-box title="ממוצע הציון הסופי" :number="avScroe" />
       <common-box title="סדר אירוח vs תוצאה סופית" number="x" />
-      <common-box title="משתתפים שנפסלו" number="x" />
+      <common-box v-if="beniamin" title="משתתפים שנפסלו">
+        <div class="flex justify-between items-center">
+          <div class="number">1</div>
+          <nuxt-link :to="`contestant/${beniamin.id}`">
+            <common-sticker :name="beniamin.name" />
+          </nuxt-link>
+        </div>
+      </common-box>
     </div>
 
     <!-- // נתנו ציון גרוע וניצחו ולהפך -->
@@ -60,6 +65,9 @@ export default {
         return acc
       }, 0)
       return Math.round(totalAges / totalContestants)
+    },
+    beniamin() {
+      return this.contestants?.find((c) => c.name?.includes('בנימין יעקביאן'))
     },
     avScroe() {
       const totalAges = this.contestants.reduce((acc, item) => {

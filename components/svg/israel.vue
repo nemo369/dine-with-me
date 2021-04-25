@@ -64,11 +64,9 @@
       <div
         v-for="(location, index) in locations"
         :key="index"
-        class="rounded-full bg-gray-400 absolute w-4 h-4"
+        :class="`rounded-full bg-gray-400 absolute w-4 h-4 svg-${index}`"
         :style="`${getPos(location, index)}`"
-      >
-        {{ index }}
-      </div>
+      ></div>
     </client-only>
   </div>
 </template>
@@ -107,7 +105,6 @@ export default {
     setTimeout(() => {
       this.render = true
     }, 200)
-    console.log(this.render)
   },
   methods: {
     getPos(location, index) {
@@ -115,12 +112,41 @@ export default {
         return `left:$0px;top:0px`
       }
       const parent = this.$refs[index].parentElement.getBoundingClientRect()
-      console.log(this.$refs[index])
       const { left, top } = this.$refs[index].getBoundingClientRect()
-      return `left:${left - parent.left}px;top:${top - parent.top}px`
+      return `left:${left - parent.left}px;top:${top - parent.top}px;width:${
+        location.length + 10
+      }px;height:${location.length + 10}px`
     },
   },
 }
 </script>
 
-<style></style>
+<style scoped>
+.svg-zafon {
+  transform: translate(0px, 0px);
+}
+.svg-hefa {
+  transform: translate(25px, 8px);
+}
+.svg-zafon {
+  transform: translate(75px, 60px);
+}
+.svg-telaviv {
+  transform: translate(0px, 0px);
+}
+.svg-haMerkaz {
+  transform: translate(38px, 0px);
+}
+.svg-golan {
+  transform: translate(-1px, 58px);
+}
+.svg-haDarom {
+  transform: translate(120px, 169px);
+}
+.svg-jerusalem {
+  transform: translate(20px, -1px);
+}
+.svg-palestine {
+  transform: translate(190px, 69px);
+}
+</style>
