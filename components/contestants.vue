@@ -25,8 +25,8 @@
       </common-box>
     </div>
     <div class="flex justify-between gap-x-8 mb-12">
-      <common-box title="ממוצע הציון הסופי" :number="avScroe" />
-      <common-box title="סדר אירוח vs תוצאה סופית" number="x" />
+      <uniq-sessions :contestants="contestants" />
+      <uniq-order :contestants="contestants" />
       <common-box v-if="beniamin" title="משתתפים שנפסלו">
         <div class="flex justify-between items-center">
           <div class="number">1</div>
@@ -68,12 +68,6 @@ export default {
     },
     beniamin() {
       return this.contestants?.find((c) => c.name?.includes('בנימין יעקביאן'))
-    },
-    avScroe() {
-      const totalAges = this.contestants.reduce((acc, item) => {
-        return (acc += +item.score)
-      }, 0)
-      return Math.round(totalAges / this.contestants.length)
     },
     orderByScored() {
       if (!this.contestants) return []

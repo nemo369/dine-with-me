@@ -92,11 +92,49 @@ export const getLoctionInIsrael = (city) => {
     case 'נעלה':
       region = 'palestine'
       break
+    case '':
+      region = null
+      break
 
     default:
-      console.log(city)
+      console.log('city', city)
       break
   }
 
   return region
+}
+export const getCountryId = (c) => {
+  let countryCode = null
+
+  if (!c.community) {
+    return countryCode
+  }
+  const countreis = {
+    IL: 'ישראל',
+    MA: 'מרוקו',
+    TN: 'תוניסיה',
+    PL: 'פולין',
+    AU: 'אוסטרליה',
+    RU: 'רוסיה',
+    FR: 'צרפת',
+    IR: 'פרס',
+    TR: 'טורקיה',
+    PS: 'ערבי',
+    GR: 'יוון',
+    DE: 'גרמניה',
+    IN: 'הודו',
+  }
+  for (const [key, value] of Object.entries(countreis)) {
+    const [community] = c.community.split('(מוצא)')
+    if (value === community.trim()) {
+      countryCode = key
+      break
+    }
+  }
+
+  if (!c.countryCode && c.community) {
+    const [community] = c.community.split('(מוצא)')
+    console.error(c.name, community)
+  }
+  return countryCode
 }

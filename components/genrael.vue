@@ -29,7 +29,7 @@
           </div>
         </div>
       </common-box>
-      <common-box title="כמות שבועות" :number="weeksNumber" />
+      <common-box title="מספר שבועות" :number="weeksNumber" />
     </div>
   </section>
 </template>

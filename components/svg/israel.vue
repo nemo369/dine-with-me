@@ -91,12 +91,14 @@ export default {
         palestine: [],
       }
       this.contestants.forEach((contestant) => {
-        const region = getLoctionInIsrael(contestant.city)
-        locations[region].push({
-          id: contestant._id,
-          name: contestant.name,
-          city: contestant.city,
-        })
+        if (contestant.city) {
+          const region = getLoctionInIsrael(contestant.city)
+          locations[region].push({
+            id: contestant._id,
+            name: contestant.name,
+            city: contestant.city,
+          })
+        }
       })
       return locations
     },
