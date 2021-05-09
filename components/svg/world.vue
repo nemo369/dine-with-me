@@ -1331,10 +1331,10 @@ export default {
         return `left:10000px;top:10000px`
       }
       const parent = el.parentElement.getBoundingClientRect()
-      const { left, top } = el.getBoundingClientRect()
-      return `left:${left - parent.left}px;top:${top - parent.top}px;width:${
-        location.length + 10
-      }px;height:${location.length + 10}px`
+      const { left, top, height, width } = el.getBoundingClientRect()
+      return `left:${left - parent.left + width / 2}px;top:${
+        top - parent.top + height / 2
+      }px;width:${10}px;height:${10}px`
     },
   },
 }

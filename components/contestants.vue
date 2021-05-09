@@ -24,6 +24,34 @@
         <podium :conts="orderByScored.slice(0, 3)" color="green" />
       </common-box>
     </div>
+    <uniq-realty :contestants="contestants" />
+
+    <div class="flex justify-between gap-x-8 mb-12">
+      <common-box title="עורכי דין" :number="lawyrs.length"> </common-box>
+      <common-box title="LGBTQ 🏳️‍🌈" :number="lgbtq.length"> </common-box>
+      <common-box title="הציון הגבוה ביותר שניתן">
+        <div class="flex justify-between items-center">
+          <div class="number">10</div>
+          <common-sticker
+            name="שי אביבי"
+            src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
+          />
+        </div>
+      </common-box>
+      <common-box title="הציון הנמוך ביותר שהוענק">
+        <div class="flex justify-between items-center">
+          <div class="number">0</div>
+          <common-sticker
+            name="שי אביבי"
+            src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
+          />
+        </div>
+      </common-box>
+    </div>
+    <div class="flex justify-between gap-x-8 mb-12">
+      <common-box title="התקפי צחוק" :number="laugh.length"> </common-box>
+      <common-box title="מתמודדים שבכו" :number="cry.length"> </common-box>
+    </div>
     <div class="flex justify-between gap-x-8 mb-12">
       <uniq-sessions :contestants="contestants" />
       <uniq-order :contestants="contestants" />
@@ -46,6 +74,12 @@ import podium from './podium.vue'
 export default {
   components: { podium },
   props: ['contestants', 'weeks'],
+  data() {
+    return {
+      laugh: [],
+      cry: [],
+    }
+  },
   computed: {
     genders() {
       return this.contestants.reduce((acc, item) => {
@@ -68,6 +102,14 @@ export default {
     },
     beniamin() {
       return this.contestants?.find((c) => c.name?.includes('בנימין יעקביאן'))
+    },
+    lgbtq() {
+      return this.contestants.filter((c) => !c.lgbt?.includes('סטרייט'))
+    },
+    lawyrs() {
+      return this.contestants.filter(
+        (c) => c.job?.includes('עורך דין') || c.job?.includes('עורכת דין')
+      )
     },
     orderByScored() {
       if (!this.contestants) return []

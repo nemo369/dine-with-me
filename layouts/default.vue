@@ -1,55 +1,104 @@
 <template>
   <div>
     <Nuxt />
+    <footer class="footer py-3 bg-gray-700 text-blue-100 justify-center flex">
+      <div></div>
+      <a
+        class="block nemo-logo logo"
+        href="https://naamanfrenkel.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          id="Layer_1"
+          height="60"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-395 273.3 50 50"
+        >
+          <path
+            id="fire"
+            class="st0"
+            d="M-380.6 308.8c2.2 2.1 2.2 5.7 0 7.8-2.2 2.1-8.9 4.9-11.1 2.8s.7-8.5 2.9-10.6c2.3-2.1 5.9-2.1 8.2 0z"
+          ></path>
+          <path
+            id="Lines"
+            class="st0"
+            d="M-380.9 309c-.1.2-.1.3-.3.5-1.4 1.3-2.8 2.7-4.2 4-1 1-2 1.9-3 2.9-.8.7-1.5 1.4-2.3 2.1-.2.2-.5.2-.7 0-.2-.2-.2-.5.1-.7 2.1-2 4.2-4 6.3-6.1 1.1-1 2.1-2 3.2-3 .1-.1.4-.1.5-.1.2.1.3.3.4.4zm1.6 1.9c.2.1.4.2.5.3.2.2.1.5-.1.6-.6.5-1.1 1.1-1.7 1.6-1.7 1.6-3.4 3.3-5.1 4.9-.3.3-.5.3-.7.1-.2-.2-.2-.5.1-.8 1.1-1 2.2-2.1 3.3-3.1 1.2-1.1 2.3-2.2 3.5-3.3-.2-.1 0-.2.2-.3zm-4.3-4.6c.1.1.3.1.4.3.2.2.1.4-.1.6l-1 1c-1.8 1.7-3.5 3.4-5.3 5-.2.2-.5.4-.7.6-.3.2-.5.2-.7 0-.2-.2-.2-.5.1-.7.6-.6 1.2-1.1 1.8-1.7 1.1-1 2.1-2 3.2-3 .6-.6 1.3-1.2 1.9-1.8.1-.1.2-.2.4-.3z"
+          ></path>
+          <g id="rocket">
+            <path
+              id="Path_1_"
+              class="st1"
+              d="M-367.7 296c6.7 6.7 8 16.2 1.7 22.5l-3 3c-6.3 6.3-2-8.9-8.6-15.5s-21.9-2.3-15.5-8.6l3-3c6.3-6.4 15.7-5.1 22.4 1.6z"
+            ></path>
+            <path
+              id="Path_2_"
+              class="st1"
+              d="M-346 274.3c1 .9 1.3 4.3 0 8.8-1.4 5.1-4.7 11.6-11.3 18-8.1 7.9-13.2 10.7-13.2 10.7-5.4 3.6-8 1.1-11.4-2.2-3.4-3.4-6-5.9-2.3-11.3 0 0 2.9-5.1 10.9-13 6.2-6.1 12.5-9.4 17.5-10.9 5-1.4 8.7-1.1 9.8-.1z"
+            ></path>
+            <path
+              id="Path_3_"
+              class="st2"
+              d="M-359 286.7c1.9 1.9 1.9 5.1 0 7-1.9 1.9-5.1 1.9-7 0-1.9-1.9-1.9-5.1 0-7 1.9-1.9 5.1-1.9 7 0z"
+            ></path>
+            <path
+              id="Path_4_"
+              class="st2"
+              d="M-371.1 298.5c1 .9-.9 4.3-5.7 8.8-4.8 4.6-7.7 5.8-8.6 4.8-1-.9.3-3.7 5-8.3 4.8-4.4 8.3-6.2 9.3-5.3z"
+            ></path>
+          </g></svg
+      ></a>
+    </footer>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style scoped>
+.nemo-logo {
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
+  transform-origin: 70px 17px;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.nemo-logo:hover {
+  transform: rotate(-45deg) translateY(-50%);
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.nemo-logo:hover #fire {
+  opacity: 0;
+  transform: translateY(-10%);
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+@keyframes rotate {
+  100% {
+    transform: rotate(-45deg);
+  }
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+@keyframes bounce {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
 }
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@keyframes fumes2 {
+  50% {
+    transform: scale(1.1);
+  }
+}
+.logo .st0 {
+  fill: #cb5858;
+}
+.logo .st1 {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 0.25;
+  stroke-miterlimit: 10;
+}
+.logo .st2 {
+  fill: #1d1d1d;
+}
+.logo #fire {
+  transition: opacity 0.2s;
 }
 </style>

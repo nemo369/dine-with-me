@@ -4,12 +4,16 @@
     <article class="mx-auto">
       <genrael :contestants="contestants" :weeks="weeks" />
       <contestants :contestants="contestants" :weeks="weeks" />
-      <food :contestants="contestants" :weeks="weeks" />
+      <oren :contestants="contestants" />
       <div class="flex justify-center gap-x-8 mb-12">
         <client-only>
           <svg-world :contestants="contestants" />
         </client-only>
       </div>
+      <uniq-shai-avivi />
+      <food :contestants="contestants" :weeks="weeks" />
+      <apron />
+      <dishes />
     </article>
   </main>
 </template>

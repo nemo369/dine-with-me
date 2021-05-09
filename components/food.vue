@@ -57,28 +57,28 @@
         <div class="text-2xl">{{ vegan.length }} צמחונים</div>
         <div class="text-2xl">{{ vegetarian.length }} טבעונים</div>
       </common-box>
-      <common-box v-if="fish" title="דגים">
+      <common-box v-if="coscos" title="קוסקוס">
         <div
-          v-for="contestant in fish"
+          v-for="contestant in coscos"
           :key="contestant.id"
           class="text-sm px-3"
         >
           <div class="relative">
             <common-sticker :src="contestant.avatar" />
             <span
-              v-if="contestant.first_course.join().includes(`דג`)"
+              v-if="contestant.first_course.join().includes(`קוסקוס`)"
               class="hidden on-hover"
               >{{ contestant.first_course[0]
               }}<span class="font-thin">{{ contestant.first_course[1] }}</span>
             </span>
             <span
-              v-if="contestant.main_course.join().includes(`דג`)"
+              v-if="contestant.main_course.join().includes(`קוסקוס`)"
               class="hidden on-hover"
               >{{ contestant.main_course[0]
               }}<span class="font-thin">{{ contestant.main_course[1] }}</span>
             </span>
             <span
-              v-if="contestant.dessert.join().includes(`דג`)"
+              v-if="contestant.dessert.join().includes(`קוסקוס`)"
               class="hidden on-hover"
               >{{ contestant.dessert[0]
               }}<span class="font-thin">{{ contestant.dessert[1] }}</span>
@@ -135,12 +135,14 @@ export default {
         )
       })
     },
-    fish() {
+    coscos() {
       const sacvhice = this.contestants.filter((c) => {
         return (
-          (c.first_course.includes(`דג`) && !c.first_course.includes(`סביצ`)) ||
-          (c.main_course.includes(`דג`) && !c.main_course.includes(`סביצ`)) ||
-          (c.dessert.includes(`דג`) && !c.dessert.includes(`סביצ`))
+          (c.first_course.includes(`קוסקוס`) &&
+            !c.first_course.includes(`סביצ`)) ||
+          (c.main_course.includes(`קוסקוס`) &&
+            !c.main_course.includes(`סביצ`)) ||
+          (c.dessert.includes(`קוסקוס`) && !c.dessert.includes(`סביצ`))
         )
       })
 
