@@ -31,13 +31,23 @@ export const getLoctionInIsrael = (city) => {
     case 'כפר ראמה':
     case 'אילניה':
     case 'נתניה':
+    case 'אור עקיבא':
+    case 'נהריה':
+    case 'טירת הכרמל':
+    case 'שלומי':
+    case 'פרדס חנה':
+    case 'יקום':
+    case 'מושב מלאה':
     case 'קיבוץ יסעור':
       region = 'zafon'
       break
     case 'hefa':
     case 'חיפה':
     case 'קרית אתא':
+    case 'קרית ביאליק':
     case 'עכו':
+    case 'קריית חיים':
+    case 'זכרון יעקב':
     case 'קרית מוצקין':
       region = 'hefa'
       break
@@ -62,9 +72,13 @@ export const getLoctionInIsrael = (city) => {
     case 'מודיעין':
     case 'צור משה':
     case 'רחובות':
+    case 'רמלה':
     case 'כפר דניאל':
     case 'רמת השרון':
     case 'יהוד':
+    case 'נחושה':
+    case 'פדיה':
+    case 'כפר מל"ל':
     case 'מושב מזור':
     case 'כוכב יאיר':
       region = 'haMerkaz'
@@ -76,6 +90,9 @@ export const getLoctionInIsrael = (city) => {
     case 'קריית גת':
     case 'באר שבע':
     case 'אשקלון':
+    case 'נתיבות':
+    case 'ירוחם':
+    case 'נחל עוז':
     case 'מושב צלפון':
       region = 'haDarom'
       break
@@ -90,6 +107,10 @@ export const getLoctionInIsrael = (city) => {
     case 'palestine':
     case 'אריאל':
     case 'נעלה':
+    case 'אורנית':
+    case 'תפוח':
+    case 'בית אל':
+    case 'חוקוק ובת חפר':
       region = 'palestine'
       break
     case '':
@@ -123,18 +144,39 @@ export const getCountryId = (c) => {
     GR: 'יוון',
     DE: 'גרמניה',
     IN: 'הודו',
+    IQ: 'עיראק',
+    YE: 'תימן',
+    AZ: `אזרביג'אן`,
+    RS: `סרביה`,
+    LY: `לוב`,
+    BY: `בלארוס`,
+    CA: `קנדה`,
+    UZ: `אוזבקיסטן`,
   }
   for (const [key, value] of Object.entries(countreis)) {
-    const [community] = c.community.split('(מוצא)')
-    if (value === community.trim()) {
-      countryCode = key
-      break
+    if (COUPLES_SESSIONS.includes(+c.session_number)) {
+      const communitys = c.community?.split(',')
+      communitys.forEach((community) => {
+        community = community.replace(/,/g, '')?.trim()
+
+        if (value === community.trim()) {
+          countryCode = key
+        }
+      })
+    } else {
+      const [community] = c.community.split('(מוצא)')
+      if (value === community.trim()) {
+        countryCode = key
+        break
+      }
     }
   }
 
-  if (!c.countryCode && c.community) {
-    const [community] = c.community.split('(מוצא)')
-    console.error(c.name, community)
+  if (!countryCode && c.community) {
+    console.error(c.name)
+    console.error(c.community)
   }
   return countryCode
 }
+
+export const COUPLES_SESSIONS = [3, 4]

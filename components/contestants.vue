@@ -32,19 +32,19 @@
       <common-box title="הציון הגבוה ביותר שניתן">
         <div class="flex justify-between items-center">
           <div class="number">10</div>
-          <common-sticker
-            name="שי אביבי"
+          <!-- <img
+            alt="שי אביבי"
             src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
-          />
+          /> -->
         </div>
       </common-box>
       <common-box title="הציון הנמוך ביותר שהוענק">
         <div class="flex justify-between items-center">
           <div class="number">0</div>
-          <common-sticker
+          <!-- <common-sticker
             name="שי אביבי"
             src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
-          />
+          /> -->
         </div>
       </common-box>
     </div>
@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import { COUPLES_SESSIONS } from '../utils/utils'
 import podium from './podium.vue'
 export default {
   components: { podium },
@@ -83,6 +84,15 @@ export default {
   computed: {
     genders() {
       return this.contestants.reduce((acc, item) => {
+        if (COUPLES_SESSIONS.includes(+item.session_number)) {
+          const genders = item.gender
+            ?.split(',')
+            .map((word) => word.replace(/,/g, '').trim())
+          genders.forEach((gender) => {
+            acc = { ...acc, [gender]: acc[gender] + 1 }
+          })
+          return acc
+        }
         if (Object.prototype.hasOwnProperty.call(acc, item.gender)) {
           return { ...acc, [item.gender]: acc[item.gender] + 1 }
         }

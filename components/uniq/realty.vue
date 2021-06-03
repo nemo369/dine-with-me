@@ -1,32 +1,56 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="grid section-131342 justify-between gap-x-8 mb-12">
       <common-box title="האח הגדול">
-        <div class="flex justify-between items-center">
+        <div class="flex items-center flex-nagtive">
           <div class="number">{{ bigBrother.length }}</div>
           <common-sticker
             v-for="c in bigBrother"
             :key="c.name"
-            :name="c.name"
             :src="c.avatar"
+            :width="`${[3, 4].includes(+c.session_number) ? '180' : '100'}`"
           />
         </div>
       </common-box>
-      <common-box title="האח הגדול">
+      <common-box title="ביק אוף ישראל">
         <div class="flex justify-between items-center">
-          <div class="number">{{ bigBrother.length }}</div>
+          <div class="number">{{ bakeOf.length }}</div>
           <common-sticker
             v-for="c in bakeOf"
             :key="c.name"
+            :width="`${[3, 4].includes(+c.session_number) ? '180' : '100'}`"
             :name="c.name"
             :src="c.avatar"
           />
         </div>
       </common-box>
-      <common-box title="דאנסי גדי">
-        <div class="flex justify-between items-center">
-          <div class="number">1</div>
-          <common-sticker :name="gadi.name" :src="gadi.avatar" />
+    </div>
+    <div class="flex justify-between gap-x-8 mb-12">
+      <common-box title="גולסטאר">
+        <div class="flex items-center">
+          <div class="number">{{ golstar.length }}</div>
+          <common-sticker
+            v-for="c in golstar"
+            :key="c.name"
+            :width="`${[3, 4].includes(+c.session_number) ? '180' : '100'}`"
+            :name="c.name"
+            :src="c.avatar"
+          />
+        </div>
+      </common-box>
+      <common-box title="כוכבי ילדים">
+        <div class="flex items-center">
+          <div class="number">2</div>
+          <common-sticker
+            name="דנסי גדי"
+            :src="gadi.avatar"
+            :width="`${[3, 4].includes(+gadi.session_number) ? '180' : '100'}`"
+          />
+          <common-sticker
+            name="חגי הספורטאי"
+            :src="hagi.avatar"
+            :width="`${[3, 4].includes(+hagi.session_number) ? '180' : '100'}`"
+          />
         </div>
       </common-box>
     </div>
@@ -44,21 +68,28 @@ export default {
     bakeOf() {
       return this.contestants.filter((c) => c.reality.includes('בייק'))
     },
+    golstar() {
+      return this.contestants.filter((c) => c.reality.includes('גולסטאר'))
+    },
     gadi() {
       return this.contestants.find((c) => c.name === 'גדי חפר')
     },
+    hagi() {
+      return this.contestants.find((c) => c.name.includes('חגי הספורטאי'))
+    },
   },
 }
-// ["ערב טוב לך את מושלמת (פ14ע1)", " הבאנו שלום עליכם (פ33ע1)",
-//  "לכבוד מיליארד מיליארד טועים פ49ע1",
-//   " hello is me you looking for פ5ע2", " גנגאם סטייל ע2פ11",
-//    " אני ניצחתי דנה אינטרנשיול ע3פ1",
-//    " never gonna dance again ע3פ1", " לאן שלא תלכי שירי מימון ע3פ9",
-//    " בית זו בסך הכל קופסא שגרים בה ע3פ11",
-//    " טוי נטע ע3פ13 ד2", " ואני רק רציתי לשיר ע3פ15", "
-//    "האהבה מעירה את היום" קדם אירווזיון 2006 ע3פ19 ד2:30",
-//    " תה ואורז ע4פ1",
-//    " נשיקות על השפתיים עופר לוי ועדן אבוטבול פ2ע4 ד44", ""]
 </script>
 
-<style></style>
+<style scoped>
+.section-131342 {
+  grid-template-columns: 3fr 1fr;
+}
+.flex-nagtive .sticker:not(:last-of-type) {
+  margin-left: -1vw;
+}
+
+/* .flex-nagtive .sticker {
+  margin-left: -3.5vw;
+} */
+</style>

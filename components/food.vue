@@ -54,35 +54,46 @@
         </ul>
       </common-box>
       <common-box :title="`״לא אוכל חיות מתות״`">
-        <div class="text-2xl">{{ vegan.length }} צמחונים</div>
-        <div class="text-2xl">{{ vegetarian.length }} טבעונים</div>
+        <div class="min-w-30">
+          <div class="text-2xl">{{ vegan.length }} צמחונים</div>
+          <div class="text-2xl">{{ vegetarian.length }} טבעונים</div>
+        </div>
       </common-box>
       <common-box v-if="coscos" title="קוסקוס">
-        <div
-          v-for="contestant in coscos"
-          :key="contestant.id"
-          class="text-sm px-3"
-        >
-          <div class="relative">
-            <common-sticker :src="contestant.avatar" />
-            <span
-              v-if="contestant.first_course.join().includes(`קוסקוס`)"
-              class="hidden on-hover"
-              >{{ contestant.first_course[0]
-              }}<span class="font-thin">{{ contestant.first_course[1] }}</span>
-            </span>
-            <span
-              v-if="contestant.main_course.join().includes(`קוסקוס`)"
-              class="hidden on-hover"
-              >{{ contestant.main_course[0]
-              }}<span class="font-thin">{{ contestant.main_course[1] }}</span>
-            </span>
-            <span
-              v-if="contestant.dessert.join().includes(`קוסקוס`)"
-              class="hidden on-hover"
-              >{{ contestant.dessert[0]
-              }}<span class="font-thin">{{ contestant.dessert[1] }}</span>
-            </span>
+        <div class="flex flex-wrap max-w-2xl">
+          <div
+            v-for="contestant in coscos"
+            :key="contestant.id"
+            class="text-sm px-3"
+          >
+            <div class="relative">
+              <common-sticker
+                :src="contestant.avatar"
+                :width="`${
+                  [3, 4].includes(+contestant.session_number) ? '100' : '75'
+                }`"
+              />
+              <span
+                v-if="contestant.first_course.join().includes(`קוסקוס`)"
+                class="hidden on-hover"
+                >{{ contestant.first_course[0]
+                }}<span class="font-thin">{{
+                  contestant.first_course[1]
+                }}</span>
+              </span>
+              <span
+                v-if="contestant.main_course.join().includes(`קוסקוס`)"
+                class="hidden on-hover"
+                >{{ contestant.main_course[0]
+                }}<span class="font-thin">{{ contestant.main_course[1] }}</span>
+              </span>
+              <span
+                v-if="contestant.dessert.join().includes(`קוסקוס`)"
+                class="hidden on-hover"
+                >{{ contestant.dessert[0]
+                }}<span class="font-thin">{{ contestant.dessert[1] }}</span>
+              </span>
+            </div>
           </div>
         </div>
       </common-box>
@@ -195,4 +206,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.min-w-30 {
+  min-width: 300px;
+}
+</style>

@@ -1,16 +1,14 @@
 <template>
   <section class="section mb-28 mt-16">
     <div class="flex justify-between gap-3 mb-6">
-      <common-box title="סה״כ פרקים" :number="episodes" />
-      <common-box
-        title="סה״כ טיולים קולינריים לאיטליה"
-        :number="contestantsNumber"
-      />
-      <common-box title="סה״כ קריינים">
+      <common-box title="מספר משתתפים" :number="contestantsNumber" />
+      <common-box title="טיולים קולינריים לאיטליה" :number="weeksNumber" />
+      <common-box title="קריינים">
         <div class="flex justify-between items-center">
           <div class="number">1</div>
-          <common-sticker
-            name="שי אביבי"
+
+          <img
+            alt="שי אביבי"
             src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
           />
         </div>
@@ -29,7 +27,7 @@
           </div>
         </div>
       </common-box>
-      <common-box title="מספר שבועות" :number="weeksNumber" />
+      <common-box title="מספר פרקים" :number="episodes" />
     </div>
   </section>
 </template>
