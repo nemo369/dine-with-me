@@ -1,7 +1,7 @@
 <template>
   <div class="box flex-grow">
     <h4 class="pb-2">{{ title }}</h4>
-    <hr />
+    <svg-hr />
     <div class="number text-5xl mt-2">
       {{ number }}
       <slot></slot>

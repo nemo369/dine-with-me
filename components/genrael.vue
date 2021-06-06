@@ -1,8 +1,8 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="flex justify-between gap-3 mb-6">
+    <div class="grid grid-cols-3 justify-between gap-3 mb-6">
       <common-box title="מספר משתתפים" :number="contestantsNumber" />
-      <common-box title="טיולים קולינריים לאיטליה" :number="weeksNumber" />
+      <common-box title="טיולים קולינריים לאיטליה  🇮🇹" :number="weeksNumber" />
       <common-box title="קריינים">
         <div class="flex justify-between items-center">
           <div class="number">1</div>
@@ -14,7 +14,7 @@
         </div>
       </common-box>
     </div>
-    <div class="flex justify-between gap-3 mb-6">
+    <div class="grid grid-cols-2 justify-between gap-3 mb-6">
       <common-box title="סוגי עונות">
         <div class="flex gap-x-6">
           <div class="flex gap-x-1">
@@ -33,11 +33,17 @@
 </template>
 
 <script>
+import { COUPLES_SESSIONS } from '../utils/utils'
 export default {
   props: ['contestants', 'weeks'],
   computed: {
     contestantsNumber() {
-      return this.contestants?.length
+      let total = 0
+      this.contestants?.forEach((c) => {
+        const sum = COUPLES_SESSIONS.includes(+c.session_number) ? 2 : 1
+        total += sum
+      })
+      return total
     },
     weeksNumber() {
       return this.weeks?.length
@@ -46,7 +52,8 @@ export default {
       let total = 0
       this.weeks?.forEach((week) => {
         const [first, last] = week.episodes.split('-')
-        total += +last - +first + 1
+        const sum = parseInt(last) - parseInt(first) + 1
+        total += sum
       })
       return total
     },

@@ -1,19 +1,24 @@
 <template>
   <section
-    class="text-center bg-blue-100 py-10 rounded flex flex-col align-center justify-center"
+    class="text-center bg-blue py-10 rounded flex flex-col align-center justify-center border-yellow border shadow"
   >
     <logo />
     <h2 class="text-5xl NuxtLogo my-3">עונת הסטטיסטיקות</h2>
-    <p class="max text-lg">
+    <p class="max text-lg max-w-md mx-auto">
       הקינוח האמיתי של תוכנית הקאלט בגרסתה הישראלית
       <br />
       כולל <strong> סטטיסטיקות ועובדות מורכבות </strong> לאורך
       <br />
-      <span class="text-blue-900 text-2xl">{{ totalSessions }}</span>
+      <span class="text-black-700 font-extralight text-2xl">{{
+        totalSessions
+      }}</span>
       עונות בכיכובם של
-      <span class="text-blue-900 text-2xl">{{ contestants }}</span>
+      <span class="text-black-700 font-extralight text-2xl">{{
+        contestants
+      }}</span>
 
-      בשלנים חובבים שאוהבים לארח ואוהבים לנצח <br />
+      בשלנים (וזוגות בשלנים) חובבים<br />
+      שאוהבים לארח ואוהבים לנצח <br />
     </p>
   </section>
 </template>

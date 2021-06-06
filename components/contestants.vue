@@ -1,12 +1,15 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="grid grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
-        <ul class="text-2xl flex gap-x-3">
-          <li v-for="(value, name) in genders" :key="value">
-            {{ name }}: {{ value }}
-          </li>
-        </ul>
+        <div class="flex">
+          <ul class="text-2xl gap-x-3">
+            <li v-for="(value, name) in genders" :key="value">
+              {{ name }}: {{ value }}
+            </li>
+          </ul>
+          <svg-gender />
+        </div>
       </common-box>
       <common-box title="ממוצע גילים" :number="ages" />
     </div>
@@ -89,14 +92,15 @@ export default {
             ?.split(',')
             .map((word) => word.replace(/,/g, '').trim())
           genders.forEach((gender) => {
-            acc = { ...acc, [gender]: acc[gender] + 1 }
+            acc = { ...acc, [gender]: acc[gender] ? acc[gender] + 1 : 1 }
           })
           return acc
         }
-        if (Object.prototype.hasOwnProperty.call(acc, item.gender)) {
-          return { ...acc, [item.gender]: acc[item.gender] + 1 }
+
+        return {
+          ...acc,
+          [item.gender]: acc[item.gender] ? acc[item.gender] + 1 : 1,
         }
-        return { ...acc, [item.gender]: 1 }
       }, {})
     },
     ages() {

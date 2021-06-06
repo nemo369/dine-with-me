@@ -1,7 +1,10 @@
 <template>
-  <main v-if="contestants" class="main py-10 px-4 min-h-screen bg-blue-200">
+  <main
+    v-if="contestants"
+    class="main min-h-screen bg-blue bg-opacity-70 rounded-md"
+  >
     <welcome :contestants="contestants.length" />
-    <article class="mx-auto">
+    <article class="mx-auto py-10 px-4">
       <genrael :contestants="contestants" :weeks="weeks" />
       <contestants :contestants="contestants" :weeks="weeks" />
       <oren :contestants="contestants" />

@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="text-black">
+    <div class="main-wrapper flex justify-center items-center bg-blue-200">
+      <Nuxt />
+    </div>
     <footer class="footer py-3 bg-gray-700 text-blue-100 justify-center flex">
       <div></div>
       <a
