@@ -1,14 +1,15 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="grid section-131342 justify-between gap-x-8 mb-12">
+    <div class="grid grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="האח הגדול">
-        <div class="flex items-center flex-nagtive">
-          <div class="number">{{ bigBrother.length }}</div>
+        <div class="flex items-center gap-x-3">
+          <div class="number ml-auto">{{ bigBrother.length }}</div>
           <common-sticker
             v-for="c in bigBrother"
             :key="c.name"
             :src="c.avatar"
-            :width="`${[3, 4].includes(+c.session_number) ? '180' : '100'}`"
+            :alt="c.name"
+            :width="`${[3, 4].includes(+c.session_number) ? '110' : '80'}`"
           />
         </div>
       </common-box>
@@ -18,7 +19,7 @@
           <common-sticker
             v-for="c in bakeOf"
             :key="c.name"
-            :width="`${[3, 4].includes(+c.session_number) ? '180' : '100'}`"
+            :width="`${[3, 4].includes(+c.session_number) ? '110' : '80'}`"
             :name="c.name"
             :src="c.avatar"
           />
@@ -32,7 +33,7 @@
           <common-sticker
             v-for="c in golstar"
             :key="c.name"
-            :width="`${[3, 4].includes(+c.session_number) ? '180' : '100'}`"
+            :width="`${[3, 4].includes(+c.session_number) ? '110' : '80'}`"
             :name="c.name"
             :src="c.avatar"
           />
@@ -44,12 +45,12 @@
           <common-sticker
             name="דנסי גדי"
             :src="gadi.avatar"
-            :width="`${[3, 4].includes(+gadi.session_number) ? '180' : '100'}`"
+            :width="`${[3, 4].includes(+gadi.session_number) ? '110' : '80'}`"
           />
           <common-sticker
             name="חגי הספורטאי"
             :src="hagi.avatar"
-            :width="`${[3, 4].includes(+hagi.session_number) ? '180' : '100'}`"
+            :width="`${[3, 4].includes(+hagi.session_number) ? '120' : '70'}`"
           />
         </div>
       </common-box>
@@ -83,7 +84,7 @@ export default {
 
 <style scoped>
 .section-131342 {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 .flex-nagtive .sticker:not(:last-of-type) {
   margin-left: -1vw;

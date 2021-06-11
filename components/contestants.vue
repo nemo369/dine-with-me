@@ -21,6 +21,7 @@
         <podium
           color="red"
           class="worst"
+          :is-worst="true"
           :conts="orderByScored.slice(Math.max(orderByScored.length - 3, 1))"
         />
       </common-box>
@@ -30,16 +31,27 @@
     </div>
     <uniq-realty :contestants="contestants" />
 
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="flex justify-around gap-x-8 mb-12">
       <common-box title="עורכי דין" :number="lawyrs.length"> </common-box>
       <common-box title="LGBTQ 🏳️‍🌈" :number="lgbtq.length"> </common-box>
       <common-box title="הציון הגבוה ביותר שניתן">
         <div class="flex justify-between items-center">
-          <div class="number">10</div>
-          <!-- <img
-            alt="שי אביבי"
-            src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
-          /> -->
+          <common-sticker
+            :name="best[1].name"
+            :src="best[1].avatar"
+            :width="80"
+          />
+          <div class="text-xl">
+            <span>
+              {{ best[0].score }}
+            </span>
+            <svg-arrow />
+          </div>
+          <common-sticker
+            :name="best[0].name"
+            :src="best[0].avatar"
+            :width="80"
+          />
         </div>
       </common-box>
       <common-box title="הציון הנמוך ביותר שהוענק">
@@ -63,7 +75,11 @@
         <div class="flex justify-between items-center">
           <div class="number">1</div>
           <nuxt-link :to="`contestant/${beniamin.id}`">
-            <common-sticker :name="beniamin.name" />
+            <common-sticker
+              :name="beniamin.name"
+              :src="beniamin.avatar"
+              width="90"
+            />
           </nuxt-link>
         </div>
       </common-box>
@@ -126,6 +142,13 @@ export default {
         (c) => c.job?.includes('עורך דין') || c.job?.includes('עורכת דין')
       )
     },
+    best() {
+      if (!this.contestants) return []
+      const sorted = [...this.contestants].sort((a, b) =>
+        a.score < b.score ? 1 : a.score > b.score ? -1 : 0
+      )
+      return sorted.filter((contestant) => contestant.score)
+    },
     orderByScored() {
       if (!this.contestants) return []
       const sorted = [...this.contestants].sort((a, b) =>
@@ -141,14 +164,13 @@ export default {
 .worst .podium-rows {
   align-items: flex-start;
 }
-.podium img {
-  max-height: 90px;
-}
 
 .podium .sticker {
   display: block;
 }
 .podium .sticker-text {
   transform: translateY(-12px);
+  padding: 4px;
+  text-align: center;
 }
 </style>

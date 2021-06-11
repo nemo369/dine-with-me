@@ -3,22 +3,17 @@
     <cld-image
       :public-id="src.provider_metadata.public_id"
       :width="width"
+      :height="width"
       fetch-format="auto"
       quality="auto"
       effect="trim"
-      :alt="name"
+      class="z-10 relative"
+      :alt="`${alt ? alt : name}`"
     />
-    <!-- <img
-      v-if="src"
-      :src="src"
-      :alt="name"
-      class="h-28 z-10 w-auto"
-      height="112"
-      width="112"
-    /> -->
+
     <div
       v-if="name"
-      class="sticker-text z-10 bg-opacity-90 bg-blue-100 py-1 pl-3 pr-6 rounded text-base transform translate-x-9 -translate-y-3 sticker__name whitespace-nowrap"
+      class="sticker-text z-0 relative bg-opacity-90 bg-blue-100 py-1 pl-3 pr-10 rounded text-base transform translate-x-9 -translate-y-3 sticker__name whitespace-nowrap"
       v-html="getName(name)"
     ></div>
   </div>
@@ -27,7 +22,7 @@
 <script>
 export default {
   name: 'Box',
-  props: ['name', 'src', 'width'],
+  props: ['name', 'src', 'width', 'alt'],
   methods: {
     getName(name) {
       const [first, last] = name.split(',')

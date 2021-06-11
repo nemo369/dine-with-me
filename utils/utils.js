@@ -127,6 +127,13 @@ export const getLoctionInIsrael = (city) => {
   return region
 }
 
+export const getCountryEmoji = (countryCode) => {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map((char) => 127397 + char.charCodeAt())
+  return String.fromCodePoint(...codePoints)
+}
 export const getAreInIsrael = (region) => {
   let hebName = ''
   switch (region) {
@@ -214,3 +221,23 @@ export const getCountryId = (c) => {
 }
 
 export const COUPLES_SESSIONS = [3, 4]
+
+export function shuffle(array) {
+  let currentIndex = array.length
+  let randomIndex
+
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+
+    // And swap it with the current element.
+    ;[array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ]
+  }
+
+  return array
+}

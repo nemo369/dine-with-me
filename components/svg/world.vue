@@ -1,5 +1,5 @@
 <template>
-  <div class="svg relative">
+  <div class="svg relative w-full">
     <svg
       class="w-full block"
       xmlns:mapsvg="http://mapsvg.com"
@@ -1296,19 +1296,31 @@
       <div
         v-for="(contestant, index) in locations"
         :key="contestant.id"
-        :class="`rounded-full bg-gray-50  absolute w-4 h-4 svg-${index} flex justify-center items-center`"
+        :class="`cursor-pointer world-dot rounded-full bg-gray-50  absolute w-4 h-4 svg-${index} flex justify-center items-center`"
         :style="`${getPos(contestant, index)}`"
       >
-        <!-- <common-tooltip
-          >{{ contestant.name }}, {{ contestant.community }}</common-tooltip
-        > -->
+        <div
+          class="hidden flex-col hover:flex justify-center items-center toltip absolute bg-gray-300 px-4 rounded w-40 h-40 top-full left-0 z-20 bg-opacity-70"
+        >
+          <common-sticker :src="contestant.avatar" width="90" />
+          <span class="text-3xl block">{{ getFlag(contestant) }}</span>
+          <svg
+            class="absolute text-black h-2 left-0 ml-3 -top-2 rotate-180 transform"
+            x="0px"
+            y="0px"
+            viewBox="0 0 255 255"
+            xml:space="preserve"
+          >
+            <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+          </svg>
+        </div>
       </div>
     </client-only>
   </div>
 </template>
 
 <script>
-import { getCountryId } from '../../utils/utils'
+import { getCountryEmoji, getCountryId, shuffle } from '../../utils/utils'
 export default {
   props: ['contestants'],
 
@@ -1320,11 +1332,14 @@ export default {
           countryId: getCountryId(contestant),
         }
       })
-      return locations.filter((c) => c.countryId)
+      return shuffle(locations).filter((c) => c.countryId)
     },
   },
 
   methods: {
+    getFlag(contestant) {
+      return getCountryEmoji(contestant.countryId)
+    },
     getPos(contestant, index) {
       const el = document.querySelector(`#${contestant.countryId}`)
       if (!el) {
@@ -1341,31 +1356,7 @@ export default {
 </script>
 
 <style scoped>
-.svg-zafon {
-  transform: translate(0px, 0px);
-}
-.svg-hefa {
-  transform: translate(25px, 8px);
-}
-.svg-zafon {
-  transform: translate(75px, 60px);
-}
-.svg-telaviv {
-  transform: translate(0px, 0px);
-}
-.svg-haMerkaz {
-  transform: translate(38px, 0px);
-}
-.svg-golan {
-  transform: translate(-1px, 58px);
-}
-.svg-haDarom {
-  transform: translate(120px, 169px);
-}
-.svg-jerusalem {
-  transform: translate(20px, -1px);
-}
-.svg-palestine {
-  transform: translate(190px, 69px);
+.world-dot:hover .toltip {
+  display: flex;
 }
 </style>

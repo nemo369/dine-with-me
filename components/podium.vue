@@ -16,6 +16,9 @@
           <nuxt-link v-if="contestant" :to="`contestant/${contestant.id}`">
             <div class="w-28">
               <common-sticker
+                :width="`${
+                  [3, 4].includes(+contestant.session_number) ? '120' : '70'
+                }`"
                 :name="contestant.name"
                 :src="contestant.avatar"
               />
@@ -30,9 +33,12 @@
 <script>
 import { slugify } from '../utils/utils'
 export default {
-  props: ['conts', 'color'],
+  props: ['conts', 'color', 'isWorst'],
   computed: {
     reArragne() {
+      if (this.isWorst) {
+        return [this.conts[1], this.conts[2], this.conts[0]]
+      }
       return [this.conts[2], this.conts[0], this.conts[1]]
     },
   },
