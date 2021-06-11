@@ -7,8 +7,8 @@
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns="http://www.w3.org/2000/svg"
       mapsvg:geoViewBox="34.228663 33.434207 35.935383 29.496766"
-      width="294.62534"
-      height="792.60406"
+      class="w-full block"
+      viewBox="0 0 294.62534 792.60406"
     >
       <path
         id="golan"
@@ -60,23 +60,48 @@
         fill="#5f5f5f91"
       />
     </svg>
-    <client-only v-if="render">
+    <client-only>
       <div
         v-for="(location, index) in locations"
         :key="index"
-        :class="`rounded-full bg-gray-400 absolute w-4 h-4 svg-${index}`"
+        :class="`transition-all rounded-full duration-300 ${
+          !showToltip || index === style ? 'bg-gray-400 opacity-1' : 'opacity-0'
+        } absolute z-0 w-4  h-4 svg-${index}`"
         :style="`${getPos(location, index)}`"
-      ></div>
+        @mouseenter="toglleToltip(location, index)"
+        @mouseleave="toglleToltip(null, '')"
+      >
+        <div
+          v-if="showToltip && index === style"
+          class="toltip absolute bg-gray-600 px-4 rounded w-64 h-20 top-full left-0 z-20"
+          :style="style"
+        >
+          <span class="text-white text-x"> {{ toolTipText }}</span>
+          <svg
+            class="absolute text-black h-2 left-0 ml-3 -top-2 rotate-180 transform"
+            x="0px"
+            y="0px"
+            viewBox="0 0 255 255"
+            xml:space="preserve"
+          >
+            <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+          </svg>
+        </div>
+      </div>
     </client-only>
   </div>
 </template>
 
 <script>
-import { getLoctionInIsrael } from '../../utils/utils'
+import {
+  getAreInIsrael,
+  getLoctionInIsrael,
+  randomValue,
+} from '../../utils/utils'
 export default {
   props: ['contestants', 'weeks'],
   data() {
-    return { render: false }
+    return { render: false, showToltip: false, style: '', toolTipText: '' }
   },
   computed: {
     locations() {
@@ -97,18 +122,27 @@ export default {
             id: contestant._id,
             name: contestant.name,
             city: contestant.city,
+            area: getAreInIsrael(region),
           })
         }
       })
       return locations
     },
   },
-  mounted() {
-    setTimeout(() => {
-      this.render = true
-    }, 200)
-  },
+  mounted() {},
   methods: {
+    toglleToltip(current, index) {
+      // console.log(current)
+      this.style = index
+      this.showToltip = !!current
+      if (!current) {
+        this.toolTipText = ''
+        return
+      }
+      const value = randomValue(current)
+      this.toolTipText = `באזור ${value.area} גרים ${current.length} בשלנים חובבים
+       , כולל ${value.name} מ${value.city}`
+    },
     getPos(location, index) {
       if (!this.$refs[index]) {
         return `left:$0px;top:0px`

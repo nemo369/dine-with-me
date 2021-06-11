@@ -16,10 +16,11 @@
     <div class="flex justify-center gap-x-8 mb-12">
       <svg-israel :contestants="contestants"></svg-israel>
     </div>
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="המשתתפים הגרועים ביותר">
         <podium
           color="red"
+          class="worst"
           :conts="orderByScored.slice(Math.max(orderByScored.length - 3, 1))"
         />
       </common-box>
@@ -136,4 +137,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.worst .podium-rows {
+  align-items: flex-start;
+}
+.podium img {
+  max-height: 90px;
+}
+
+.podium .sticker {
+  display: block;
+}
+.podium .sticker-text {
+  transform: translateY(-12px);
+}
+</style>

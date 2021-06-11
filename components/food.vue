@@ -5,7 +5,7 @@
         >אוכל</span
       >
     </h3>
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="התיאור הארוך ביותר">
         <div v-if="longest" class="flex text-lg justify-between">
           <span class="w-4/6">
@@ -30,7 +30,7 @@
         </div>
       </common-box>
     </div>
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box v-if="sacvhice" title="סביצ׳ה">
         <ul
           v-for="contestant in sacvhice"

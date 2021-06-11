@@ -1,6 +1,6 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="הופעת אורח בפרק שבו ההורים שלהם השתתפו">
         <div class="flex items-center">
           <div class="number">1</div>

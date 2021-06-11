@@ -1,3 +1,5 @@
+export const randomValue = (array) =>
+  array[Math.floor(Math.random() * array.length)]
 export const slugify = (param) => {
   param = param
     .replace(/\s+/g, '-') // collapse whitespace and replace by -
@@ -123,6 +125,38 @@ export const getLoctionInIsrael = (city) => {
   }
 
   return region
+}
+
+export const getAreInIsrael = (region) => {
+  let hebName = ''
+  switch (region) {
+    case 'golan':
+      hebName = 'הגולן'
+      break
+    case 'zafon':
+      hebName = 'צפון הארץ'
+      break
+    case 'hefa':
+      hebName = 'חיפה'
+      break
+    case 'telaviv':
+      hebName = 'תל אביב'
+      break
+    case 'haMerkaz':
+      hebName = 'המרכז'
+      break
+    case 'haDarom':
+      hebName = 'הדרום'
+      break
+    case 'jerusalem':
+      hebName = 'ירושלים'
+      break
+    case 'palestine':
+      hebName = 'השטחים'
+      break
+  }
+
+  return hebName
 }
 export const getCountryId = (c) => {
   let countryCode = null

@@ -1,17 +1,27 @@
 <template>
-  <div v-if="conts" class="podium flex items-end gap-1">
-    <div
-      v-for="(contestant, index) in conts"
-      :key="index"
-      :class="`bg-${color}-400 border-${color}-100 border pb-4 ${
-        index ? `h-${index * 3 + 18} order-${index - 1}` : 'h-40 order-1'
-      }`"
-    >
-      <div v-if="contestant">
-        <nuxt-link :to="`contestant/${contestant.id}`">
-          <small class="mx-4">{{ contestant.score }}</small>
-          <common-sticker :name="contestant.name" src="" />
-        </nuxt-link>
+  <div v-if="reArragne">
+    <div class="podium py-3">
+      <div class="flex items-end gap-12 justify-center podium-rows">
+        <div
+          v-for="(contestant, index) in reArragne"
+          :key="index"
+          :class="`h-full bg-${color}-400 border-${color}-100 border pb-4 w-28`"
+          :style="`height:${getHeight(index)}px`"
+        >
+          {{ contestant.score }}
+        </div>
+      </div>
+      <div class="flex gap-12 justify-center items-end mt-2">
+        <div v-for="(contestant, index) in reArragne" :key="index">
+          <nuxt-link v-if="contestant" :to="`contestant/${contestant.id}`">
+            <div class="w-28">
+              <common-sticker
+                :name="contestant.name"
+                :src="contestant.avatar"
+              />
+            </div>
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -21,9 +31,23 @@
 import { slugify } from '../utils/utils'
 export default {
   props: ['conts', 'color'],
+  computed: {
+    reArragne() {
+      return [this.conts[2], this.conts[0], this.conts[1]]
+    },
+  },
   methods: {
     sluged(p) {
       return slugify(p)
+    },
+    getHeight(i) {
+      if (i === 0) {
+        return 150
+      }
+      if (i === 1) {
+        return 220
+      }
+      return 180
     },
   },
 }
