@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-hidden">
-    <hr class="border-brand-100" />
+    <hr class="bg-brand opacity-60 border border-brand-700" />
   </div>
 </template>
 

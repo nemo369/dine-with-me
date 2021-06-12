@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="text-center mb-6 text-2xl">שטיפת כלים לא בכיור</h4>
+    <h4 class="text-center mb-6 text-2xl">הכינו את הארוחה לא בבית שלהם</h4>
     <ul>
       <li
         v-for="value in dishes"
@@ -21,7 +21,7 @@
       >
         <strong>{{ value.desc }}</strong>
         <div class="border border-dashed flex-grow h-0 mx-6 w-9"></div>
-        <span>{{ getC(value.id).name }}</span>
+        <span v-if="getC(value.id)">{{ getC(value.id).name }}</span>
       </li>
     </ul>
   </div>
@@ -35,14 +35,14 @@ export default {
     return {
       dishes: [
         {
-          id: '6077fd498905dcba4d5a292f',
-          desc: 'השאיר את הכלים בקרטון בשביל שאשתו תשטוף',
+          id: '6077fe568905dcba4d5a294c',
+          desc: 'בישל אצל ההורים שלו',
         },
-        { id: '6077fd498905dcba4d5a2934', desc: 'שטף את הכלים עם צינור בגינה' },
-        { id: '6077fd498905dcba4d5a293e', desc: 'אחת האורחות שטפה בשבילו' },
-        { id: '60b88fc3ccc85f85822661bf', desc: 'העוזרת שטפה בשבילם' },
-        { id: '60b885e81653cc67f9aa7158', desc: 'שטפה כלים בזמן הארוחה' },
-        { id: '60b88fc3ccc85f85822661cb', desc: 'שטפו את הכלים באמבטיה' },
+        { id: '6077fd498905dcba4d5a2949', desc: 'בישל בתנור של השכן' },
+        { id: '6077fd498905dcba4d5a293f', desc: 'בישלה אצל ההורים שלה' },
+        { id: '6077fed6a93beac05efc6939', desc: 'הכין את האוכל בעסק שלו' },
+        { id: '6077fed6a93beac05efc693b', desc: 'השתמש בחדר האוכל של הקיבוץ' },
+        { id: '6077fed6a93beac05efc6929', desc: 'אירחה אצל ההורים' },
       ],
     }
   },

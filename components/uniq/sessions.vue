@@ -1,9 +1,9 @@
 <template>
   <common-box title="ממוצע הציון הסופי">
     <div v-if="avScroe" class="relative">
-      <div class="absolute">
+      <div class="absolute text-3xl">
         {{ avScroe.allAv }}
-        <small class="text-sm -mr-5">כלל העונות</small>
+        <small class="text-sm -mr-1">כלל העונות</small>
       </div>
       <div class="sessions-cmp">
         <svg
@@ -15,10 +15,15 @@
         <trend-chart
           v-if="avScroe"
           :datasets="[
-            { data: avScroe.dataset, fill: true, className: 'curve-btc' },
+            {
+              data: avScroe.dataset,
+              fill: true,
+              className: 'curve-btc',
+              smooth: true,
+            },
           ]"
           :labels="labels"
-          :min="0"
+          :min="23"
           :grid="grid"
         />
       </div>
@@ -54,17 +59,24 @@ export default {
       const sumedAll = this.contestants?.reduce((acc, item) => {
         return (acc += +item.score)
       }, 0)
-      const allAv = Math.round(sumedAll / this.contestants.length)
+      const allAv = (sumedAll / this.contestants.length).toFixed(2)
       // return 0
       return {
         allAv,
-        dataset: [first, seconed, third, forth],
+        dataset: [
+          { value: first },
+          { value: seconed },
+          { value: third },
+          { value: forth },
+        ],
       }
 
       function averageAgeBySession(array, sessionNumber) {
-        const getSession = (elem) => elem.session_number === sessionNumber
-        const average = (a, b, i, self) => a + b.score / self.length
-        return array.filter(getSession).reduce(average, 0)
+        const getSession = (elem) => +elem.session_number === +sessionNumber
+        const sumed = (acc, b, i, self) => acc + b.score
+        const sessionedArray = array.filter(getSession)
+        const average = sessionedArray.reduce(sumed, 0)
+        return average / sessionedArray.length
       }
     },
   },

@@ -13,7 +13,24 @@
 
     <div
       v-if="name"
-      class="sticker-text z-0 relative text-brand-900 opacity-90 bg-brand-100 py-1 pl-3 pr-10 rounded text-base transform translate-x-9 -translate-y-3 sticker__name whitespace-nowrap"
+      class="
+        sticker-text
+        z-0
+        relative
+        text-brand-900
+        opacity-90
+        bg-brand-100
+        py-1
+        pl-3
+        pr-10
+        rounded
+        text-base
+        transform
+        translate-x-9
+        -translate-y-3
+        sticker__name
+        whitespace-nowrap
+      "
       v-html="getName(name)"
     ></div>
   </div>

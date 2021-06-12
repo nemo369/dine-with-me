@@ -19,7 +19,6 @@
           :key="value.name"
           class="
             flex
-            justify-between
             py-3
             px-6
             bg-brand-300
@@ -29,10 +28,14 @@
             max-w-md
             mx-auto
             mb-1
-            text-center
           "
         >
-          <a :href="value.src" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="value.src"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full h-full"
+          >
             <span>{{ value.name }}</span>
           </a>
         </li>

@@ -3,6 +3,7 @@
     <welcome :contestants="contestants.length" />
     <article class="mx-auto py-10 px-4">
       <genrael :contestants="contestants" :weeks="weeks" />
+      <came-for :contestants="contestants" />
       <contestants :contestants="contestants" :weeks="weeks" />
       <oren :contestants="contestants" />
       <div class="flex justify-center gap-x-8 mb-12">
@@ -13,7 +14,7 @@
       <uniq-shai-avivi />
       <food :contestants="contestants" :weeks="weeks" />
       <apron />
-      <dishes />
+      <more :contestants="contestants" />
     </article>
   </main>
 </template>
@@ -68,7 +69,7 @@ export default {
         100: `hsl(${Math.round(this.hue)}, 33%, 88%)`,
         300: `hsl(${Math.round(this.hue)}, 40%, 50%`,
         DEFAULT: `hsl(${Math.round(this.hue)}, 50%, 50%)`,
-        700: `hsl(${Math.round(this.hue)}, 71%, 25%)`,
+        700: `hsl(${Math.round(this.hue)}, 61%, 35%)`,
         900: `hsl(${Math.round(this.hue)}, 100%, 10%)`,
       }
 

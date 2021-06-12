@@ -41,14 +41,15 @@
       </common-box>
       <common-box title="כוכבי ילדים">
         <div class="flex items-center">
-          <div class="number">2</div>
+          <div class="number ml-auto">2</div>
           <common-sticker
             name="דנסי גדי"
             :src="gadi.avatar"
             :width="`${[3, 4].includes(+gadi.session_number) ? '110' : '80'}`"
           />
           <common-sticker
-            name="חגי הספורטאי"
+            class="hagi-avatar"
+            :name="hagi.name"
             :src="hagi.avatar"
             :width="`${[3, 4].includes(+hagi.session_number) ? '120' : '70'}`"
           />
@@ -82,15 +83,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.section-131342 {
-  grid-template-columns: 2fr 1fr;
+<style>
+.hagi-avatar.sticker {
+  align-items: center;
 }
-.flex-nagtive .sticker:not(:last-of-type) {
-  margin-left: -1vw;
-}
-
-/* .flex-nagtive .sticker {
-  margin-left: -3.5vw;
-} */
 </style>

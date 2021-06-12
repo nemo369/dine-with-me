@@ -5,6 +5,8 @@
         >המשתתפים</span
       >
     </h3>
+    <clean-sick :contestants="contestants" />
+
     <div class="grid grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
         <div class="flex">
@@ -38,7 +40,6 @@
       </common-box>
     </div>
     <uniq-realty :contestants="contestants" />
-
     <div class="flex justify-around gap-x-8 mb-12">
       <common-box title="עורכי דין" :number="lawyrs.length"> </common-box>
       <common-box title="LGBTQ 🏳️‍🌈" :number="lgbtq.length"> </common-box>
@@ -76,6 +77,7 @@
       <common-box title="התקפי צחוק" :number="laugh.length"> </common-box>
       <common-box title="מתמודדים שבכו" :number="cry.length"> </common-box>
     </div>
+    <not-eating />
     <div class="flex justify-between gap-x-8 mb-12">
       <uniq-sessions :contestants="contestants" />
       <uniq-order :contestants="contestants" />
@@ -105,8 +107,24 @@ export default {
   props: ['contestants', 'weeks'],
   data() {
     return {
-      laugh: [],
-      cry: [],
+      laugh: [
+        { id: '6077fed6a93beac05efc6925' },
+        { id: '6077fed6a93beac05efc6929' },
+        { id: '6077fed6a93beac05efc6937' },
+        { id: '60b88fc3ccc85f85822661c7' },
+      ],
+      cry: [
+        { id: '6077fd498905dcba4d5a2923' },
+        { id: '6077fd498905dcba4d5a292a' },
+        { id: '6077fed6a93beac05efc6915' },
+        { id: '6077fed6a93beac05efc6918' },
+        { id: '6077fed6a93beac05efc691e' },
+        { id: '6077fed6a93beac05efc6924' },
+        { id: '6077fed6a93beac05efc692a' },
+        { id: '6077fed6a93beac05efc692d' },
+        { id: '6077fed6a93beac05efc6933' },
+        { id: '60b885e81653cc67f9aa715b' },
+      ],
     }
   },
   computed: {
