@@ -1,9 +1,9 @@
 <template>
-  <div class="text-black">
-    <div class="main-wrapper flex justify-center items-center bg-blue-200">
+  <div class="text-brand-100">
+    <div class="main-wrapper flex justify-center items-center bg-brand-300">
       <Nuxt />
     </div>
-    <footer class="footer py-3 bg-gray-700 text-blue-100 justify-center flex">
+    <footer class="footer py-3 bg-gray-700 text-brand-100 justify-center flex">
       <div></div>
       <a
         class="block nemo-logo logo"

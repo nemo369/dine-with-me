@@ -1,11 +1,11 @@
 <template>
   <div v-if="reArragne">
     <div class="podium py-3">
-      <div class="flex items-end gap-12 justify-center podium-rows">
+      <div class="flex items-end gap-12 justify-center podium-rows text-white">
         <div
           v-for="(contestant, index) in reArragne"
           :key="index"
-          :class="`h-full bg-${color}-400 border-${color}-100 border pb-4 w-28`"
+          :class="`h-full ${color} border pb-4 w-28`"
           :style="`height:${getHeight(index)}px`"
         >
           {{ contestant.score }}

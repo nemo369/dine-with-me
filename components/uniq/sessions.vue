@@ -3,20 +3,15 @@
     <div v-if="avScroe" class="relative">
       <div class="absolute">
         {{ avScroe.allAv }}
+        <small class="text-sm -mr-5">כלל העונות</small>
       </div>
       <div class="sessions-cmp">
         <svg
           style="width: 0; height: 0; position: absolute"
           aria-hidden="true"
           focusable="false"
-        >
-          <defs>
-            <linearGradient id="btcFill" x1="1" x2="1" y1="0" y2="1">
-              <stop offset="0%" stop-color="#f69119"></stop>
-              <stop offset="100%" stop-color="#ffffff"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
+          class="fill-current text-brand-300"
+        ></svg>
         <trend-chart
           v-if="avScroe"
           :datasets="[
@@ -56,7 +51,7 @@ export default {
       const third = averageAgeBySession(this.contestants, 3)
       const forth = averageAgeBySession(this.contestants, 4)
 
-      const sumedAll = this.contestants.reduce((acc, item) => {
+      const sumedAll = this.contestants?.reduce((acc, item) => {
         return (acc += +item.score)
       }, 0)
       const allAv = Math.round(sumedAll / this.contestants.length)
@@ -84,15 +79,11 @@ export default {
 
 .sessions-cmp .grid line,
 .sessions-cmp .labels line {
-  stroke: rgba(246, 145, 25, 0.5);
+  stroke: var(--colors-brand-700);
 }
 
 .sessions-cmp .curve-btc .stroke {
-  stroke: #f69119;
+  stroke: var(--colors-brand-700);
   stroke-width: 2;
-}
-.sessions-cmp .curve-btc .fill {
-  fill: url(#btcFill);
-  fill-opacity: 0.5;
 }
 </style>

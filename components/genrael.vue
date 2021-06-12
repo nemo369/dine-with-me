@@ -1,5 +1,10 @@
 <template>
   <section class="section mb-28 mt-16">
+    <h2 class="subtitle tac my-6 flex justify-center text-xl font-light">
+      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
+        >על בואו לאכול איתי</span
+      >
+    </h2>
     <div class="grid grid-cols-3 justify-between gap-3 mb-6">
       <common-box title="מספר משתתפים" :number="contestantsNumber" />
       <common-box title="טיולים קולינריים לאיטליה  🇮🇹" :number="weeksNumber" />

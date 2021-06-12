@@ -1,7 +1,7 @@
 <template>
   <div class="svg relative w-full">
     <svg
-      class="w-full block"
+      class="w-full block fill-current text-brand-900 world-map-svg"
       xmlns:mapsvg="http://mapsvg.com"
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1296,16 +1296,46 @@
       <div
         v-for="(contestant, index) in locations"
         :key="contestant.id"
-        :class="`cursor-pointer world-dot rounded-full bg-gray-50  absolute w-4 h-4 svg-${index} flex justify-center items-center`"
+        :class="`cursor-pointer world-dot rounded-full bg-brand-100  absolute w-4 h-4 svg-${index} flex justify-center items-center`"
         :style="`${getPos(contestant, index)}`"
       >
         <div
-          class="hidden flex-col hover:flex justify-center items-center toltip absolute bg-gray-300 px-4 rounded w-40 h-40 top-full left-0 z-20 bg-opacity-70"
+          class="
+            hidden
+            flex-col
+            hover:flex
+            justify-center
+            items-center
+            toltip
+            absolute
+            bg-brand-300
+            px-4
+            rounded
+            opacity-90
+            w-40
+            h-40
+            top-full
+            left-0
+            z-20
+          "
         >
-          <common-sticker :src="contestant.avatar" width="90" />
+          <common-sticker
+            :src="contestant.avatar"
+            width="90"
+            :name="contestant.name"
+          />
           <span class="text-3xl block">{{ getFlag(contestant) }}</span>
           <svg
-            class="absolute text-black h-2 left-0 ml-3 -top-2 rotate-180 transform"
+            class="
+              absolute
+              text-brand
+              h-2
+              left-0
+              ml-3
+              -top-2
+              rotate-180
+              transform
+            "
             x="0px"
             y="0px"
             viewBox="0 0 255 255"
@@ -1349,7 +1379,7 @@ export default {
       const { left, top, height, width } = el.getBoundingClientRect()
       return `left:${left - parent.left + width / 2}px;top:${
         top - parent.top + height / 2
-      }px;width:${10}px;height:${10}px`
+      }px;width:${18}px;height:${18}px`
     },
   },
 }
@@ -1358,5 +1388,10 @@ export default {
 <style scoped>
 .world-dot:hover .toltip {
   display: flex;
+}
+
+.world-map-svg path {
+  fill: var(--colors-brand-700);
+  stroke: var(--colors-brand);
 }
 </style>

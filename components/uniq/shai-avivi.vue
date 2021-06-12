@@ -1,6 +1,15 @@
 <template>
   <section
-    class="section mb-28 mt-16 md:flex justify-around align-top max-w-6xl"
+    class="
+      section
+      mb-28
+      mt-16
+      md:flex
+      justify-around
+      align-top
+      max-w-6xl
+      mx-auto
+    "
   >
     <div>
       <h4 class="text-center mb-6 text-2xl">שירים ששי אביבי שר</h4>
@@ -8,7 +17,20 @@
         <li
           v-for="value in songs"
           :key="value.name"
-          class="flex justify-between py-3 px-2 bg-opacity-75 rounded-sm shadow max-w-md mx-auto mb-1 text-center"
+          class="
+            flex
+            justify-between
+            py-3
+            px-6
+            bg-brand-300
+            hover:bg-brand
+            rounded-sm
+            shadow
+            max-w-md
+            mx-auto
+            mb-1
+            text-center
+          "
         >
           <a :href="value.src" target="_blank" rel="noopener noreferrer">
             <span>{{ value.name }}</span>

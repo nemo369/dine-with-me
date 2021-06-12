@@ -1,3 +1,14 @@
+export function debounce(method, delay) {
+  clearTimeout(method._tId)
+  method._tId = setTimeout(function () {
+    method()
+  }, delay)
+}
+
+export const rnd = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 export const randomValue = (array) =>
   array[Math.floor(Math.random() * array.length)]
 export const slugify = (param) => {
@@ -193,6 +204,7 @@ export const getCountryId = (c) => {
     BY: `בלארוס`,
     CA: `קנדה`,
     UZ: `אוזבקיסטן`,
+    CU: `כורדיסטאן`,
   }
   for (const [key, value] of Object.entries(countreis)) {
     if (COUPLES_SESSIONS.includes(+c.session_number)) {

@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-hidden">
-    <hr />
+    <hr class="border-brand-100" />
   </div>
 </template>
 

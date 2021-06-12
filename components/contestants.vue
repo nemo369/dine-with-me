@@ -1,5 +1,10 @@
 <template>
   <section class="section mb-28 mt-16">
+    <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
+      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
+        >המשתתפים</span
+      >
+    </h3>
     <div class="grid grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
         <div class="flex">
@@ -19,14 +24,17 @@
     <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="המשתתפים הגרועים ביותר">
         <podium
-          color="red"
+          color="bg-brand-700 border-brand-900"
           class="worst"
           :is-worst="true"
           :conts="orderByScored.slice(Math.max(orderByScored.length - 3, 1))"
         />
       </common-box>
       <common-box title="המשתתפים הטובים ביותר">
-        <podium :conts="orderByScored.slice(0, 3)" color="green" />
+        <podium
+          :conts="orderByScored.slice(0, 3)"
+          color="bg-brand-300 border-brand-100"
+        />
       </common-box>
     </div>
     <uniq-realty :contestants="contestants" />
@@ -103,7 +111,7 @@ export default {
   },
   computed: {
     genders() {
-      return this.contestants.reduce((acc, item) => {
+      return this.contestants?.reduce((acc, item) => {
         if (COUPLES_SESSIONS.includes(+item.session_number)) {
           const genders = item.gender
             ?.split(',')
@@ -122,7 +130,7 @@ export default {
     },
     ages() {
       let totalContestants = 0
-      const totalAges = this.contestants.reduce((acc, item) => {
+      const totalAges = this.contestants?.reduce((acc, item) => {
         if (item.age) {
           totalContestants++
           acc += +item.age

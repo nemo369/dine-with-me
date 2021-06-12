@@ -1,6 +1,6 @@
 <template>
   <section
-    class="text-center bg-blue py-10 rounded flex flex-col align-center justify-center border-yellow border shadow"
+    class="text-center bg-brand-700 py-10 rounded flex flex-col align-center justify-center border-yellow border shadow"
   >
     <logo />
     <h2 class="text-5xl NuxtLogo my-3">עונת הסטטיסטיקות</h2>
@@ -9,11 +9,11 @@
       <br />
       כולל <strong> סטטיסטיקות ועובדות מורכבות </strong> לאורך
       <br />
-      <span class="text-black-700 font-extralight text-2xl">{{
+      <span class="text-brand-100-700 font-extralight text-2xl">{{
         totalSessions
       }}</span>
       עונות בכיכובם של
-      <span class="text-black-700 font-extralight text-2xl">{{
+      <span class="text-brand-100-700 font-extralight text-2xl">{{
         contestants
       }}</span>
 
@@ -26,14 +26,13 @@
 <script>
 export default {
   name: 'Welcome',
-  props: {
-    contestants: Number,
-  },
+  props: ['contestants'],
   data() {
     return {
       totalSessions: 4,
     }
   },
+  methods: {},
 }
 </script>
 

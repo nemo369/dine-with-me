@@ -1,7 +1,7 @@
 <template>
   <section class="section mb-28 mt-16">
     <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
-      <span class="py-1 px-6 bg-opacity-10 bg-blue-50 rounded shadow"
+      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
         >אוכל</span
       >
     </h3>

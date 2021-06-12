@@ -1,7 +1,7 @@
 <template>
   <div class="svg flex-grow max-w-[88px] mr-6 pt-4">
     <svg
-      class="opacity-60"
+      class="fill-current text-brand-700"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       version="1.1"
