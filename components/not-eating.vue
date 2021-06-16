@@ -23,8 +23,9 @@
         :key="c.id"
         class="flex justify-between py-2 px-4 bg-brand shadow"
       >
+        <span class="w-4/6">"{{ c.text }}"</span>
         <span>{{ c.name }}</span>
-        <span>s:{{ c.s }},e:{{ c.e }}</span>
+        <!-- <span>s:{{ c.s }},e:{{ c.name }}</span> -->
       </div>
     </div>
   </div>
@@ -35,6 +36,20 @@ export default {
   data() {
     return {
       ppls: [
+        {
+          id: '60b88fc3ccc85f85822661c8',
+          text: 'לא אוכלת בשר בכלל,אבל כן אוכלת בשר טחון, המבורגר, שניצל, קציצה, כבד עוף וזהו, לא נוגעת בבשר',
+          s: 3,
+          e: 15,
+          name: 'סימה דהן',
+        },
+        {
+          id: '60b8867b1653cc67f9aa7184',
+          text: 'פסטה, דגים, חלקי פנים, גבינות, עוף, משהו קשור לים, ביצים, תאנים, פירה חלבי',
+          s: 4,
+          e: 15,
+          name: 'לירז כהן',
+        },
         {
           id: '6077fd498905dcba4d5a291b',
           text: 'בצל חי וקשיו כבש',

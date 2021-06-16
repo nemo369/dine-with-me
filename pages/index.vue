@@ -6,6 +6,7 @@
       <came-for :contestants="contestants" />
       <contestants :contestants="contestants" :weeks="weeks" />
       <oren :contestants="contestants" />
+      <also-more :contestants="contestants" />
       <div class="flex justify-center gap-x-8 mb-12">
         <client-only>
           <svg-world :contestants="contestants" />
@@ -13,13 +14,14 @@
       </div>
       <uniq-shai-avivi />
       <food :contestants="contestants" :weeks="weeks" />
-      <apron />
+      <apron :contestants="contestants" />
       <more :contestants="contestants" />
     </article>
   </main>
 </template>
 
 <script>
+import { rnd } from '../utils/utils'
 /* eslint-disable prettier/prettier */
 
 export default {
@@ -27,7 +29,8 @@ export default {
     return {
       weeks: [],
       contestants: [],
-      hue: 326,
+      hue: rnd(150,360),
+      dir:-1
     }
   },
   async fetch() {
@@ -63,7 +66,13 @@ export default {
   },
   methods: {
     switchColor(e) {
-      this.hue -= 0.4
+      this.hue += (0.25 * this.dir);
+      if(this.hue < 155){
+        this.dir = 1
+      }
+      if(this.hue > 420){
+        this.dir = -1
+      }
       const root = document.documentElement
       const brand = {
         100: `hsl(${Math.round(this.hue)}, 33%, 88%)`,

@@ -12,7 +12,7 @@
     <h4 class="text-brand-100 text-center font-thin mb-10 text-3xl">
       חולי ניקיון
     </h4>
-    <div class="flex flex-wrap gap-x-4 gap-y-2 max-w-xl mx-auto">
+    <div class="flex flex-wrap gap-x-6 gap-y-2 max-w-2xl mx-auto">
       <common-sticker
         v-for="c in ppls"
         :key="c.id"
@@ -31,6 +31,9 @@ export default {
   data() {
     return {
       ppls: [
+        {
+          id: '60b8867b1653cc67f9aa716e',
+        },
         {
           id: '6077fd498905dcba4d5a2923',
         },

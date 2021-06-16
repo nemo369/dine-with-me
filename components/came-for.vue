@@ -10,13 +10,14 @@
     "
   >
     <blockquote class="text-brand-100 text-center font-thin mb-10 text-3xl">
-      אני _________.
+      אני/אנחנו _________.
     </blockquote>
     <div class="grid grid-cols-2 gap-y-1 gap-x-4">
       <div v-for="c in ppls" :key="c.id" class="flex py-2 px-4 bg-brand shadow">
         <span>"...{{ c.quote }}"</span>
-        <span class="mr-2 ml-6">|</span>
-        <span>{{ getC(c.id).name }}</span>
+        <span class="mr-1 ml-4">|</span>
+        <span>{{ getC(c.id).name }},</span>
+        <span class="mr-1"> עונה:{{ getC(c.id).session_number }}</span>
       </div>
       <svg-winner class="mt-2 ml-6 flex justify-end" />
     </div>
@@ -43,7 +44,7 @@ export default {
         },
         {
           id: '6077fd498905dcba4d5a293a',
-          quote: ' באתי לתת 100%/ להיות ראשון ',
+          quote: ' באתי להיות ראשון ',
         },
         {
           id: '6077fd498905dcba4d5a2938',
@@ -84,6 +85,27 @@ export default {
         {
           id: '60b88fc3ccc85f85822661c7',
           quote: 'ממש רוצות לנצח',
+        },
+        {
+          id: '60b8867b1653cc67f9aa716e',
+          quote: 'מאוד תחרותיים',
+        },
+
+        {
+          id: '60b88f1accc85f85822661b2',
+          quote: 'מאוד תחרותיים',
+        },
+        {
+          id: '60b88f1accc85f85822661b1',
+          quote: 'עושה הכל לנצח',
+        },
+        {
+          id: '60b88f1accc85f85822661b5',
+          quote: 'באנו לנצח חד וחלק ואין אופציה אחרת',
+        },
+        {
+          id: '60b88f1accc85f85822661b6',
+          quote: 'תחרותיים',
         },
       ],
     }

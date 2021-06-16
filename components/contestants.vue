@@ -112,6 +112,8 @@ export default {
         { id: '6077fed6a93beac05efc6929' },
         { id: '6077fed6a93beac05efc6937' },
         { id: '60b88fc3ccc85f85822661c7' },
+        { id: '60b88f1accc85f85822661af' },
+        { id: '60b88f1accc85f85822661b1' },
       ],
       cry: [
         { id: '6077fd498905dcba4d5a2923' },

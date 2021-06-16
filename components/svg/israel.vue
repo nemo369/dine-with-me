@@ -7,7 +7,7 @@
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns="http://www.w3.org/2000/svg"
       mapsvg:geoViewBox="34.228663 33.434207 35.935383 29.496766"
-      class="w-full block fill-current"
+      class="w-full block fill-current max-h-[810px]"
       viewBox="0 0 294.62534 792.60406"
     >
       <path

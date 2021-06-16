@@ -7,7 +7,7 @@
       fetch-format="auto"
       quality="auto"
       effect="trim"
-      class="z-10 relative"
+      class="z-[1] relative"
       :alt="`${alt ? alt : name}`"
     />
 
