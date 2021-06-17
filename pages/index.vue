@@ -6,25 +6,32 @@
       <came-for :contestants="contestants" />
       <contestants :contestants="contestants" :weeks="weeks" />
       <oren :contestants="contestants" />
+      <entrance :contestants="contestants" />
       <also-more :contestants="contestants" />
       <div class="flex justify-center gap-x-8 mb-12">
         <client-only>
           <svg-world :contestants="contestants" />
         </client-only>
       </div>
+      <shows :contestants="contestants" />
       <uniq-shai-avivi />
       <food :contestants="contestants" :weeks="weeks" />
       <apron :contestants="contestants" />
       <more :contestants="contestants" />
     </article>
+    <footer>
+      <the-footer :contestants="contestants" />
+    </footer>
   </main>
 </template>
 
 <script>
+import theFooter from '../components/the-footer.vue'
 import { rnd } from '../utils/utils'
 /* eslint-disable prettier/prettier */
 
 export default {
+  components: { theFooter },
   data() {
     return {
       weeks: [],

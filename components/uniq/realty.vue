@@ -6,6 +6,7 @@
           <div class="number ml-auto">{{ bigBrother.length }}</div>
           <common-sticker
             v-for="c in bigBrother"
+            :id="c.id"
             :key="c.name"
             :src="c.avatar"
             :alt="c.name"
@@ -18,6 +19,7 @@
           <div class="number">{{ bakeOf.length }}</div>
           <common-sticker
             v-for="c in bakeOf"
+            :id="c.id"
             :key="c.name"
             :width="`${[3, 4].includes(+c.session_number) ? '110' : '80'}`"
             :name="c.name"
@@ -32,6 +34,7 @@
           <div class="number">{{ golstar.length }}</div>
           <common-sticker
             v-for="c in golstar"
+            :id="c.id"
             :key="c.name"
             :width="`${[3, 4].includes(+c.session_number) ? '110' : '80'}`"
             :name="c.name"
@@ -43,11 +46,13 @@
         <div class="flex items-center">
           <div class="number ml-auto">2</div>
           <common-sticker
+            :id="gadi.id"
             name="דנסי גדי"
             :src="gadi.avatar"
             :width="`${[3, 4].includes(+gadi.session_number) ? '110' : '80'}`"
           />
           <common-sticker
+            :id="hagi.id"
             class="hagi-avatar"
             :name="hagi.name"
             :src="hagi.avatar"

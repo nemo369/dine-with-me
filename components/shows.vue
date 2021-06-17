@@ -1,0 +1,83 @@
+<template>
+  <section class="section mb-28 mt-16">
+    <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
+      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
+        >קטע אומנותי</span
+      >
+    </h3>
+    <ul class="md:grid md:grid-cols-2 gap-x-4 gap-y-10 justify-center">
+      <li v-for="show in shows" :key="show.publicId" class="mb-10">
+        <div class="rounded-lg overflow-hidden max-w-[600px] h-[337px] mx-auto">
+          <cld-image
+            :public-id="show.publicId"
+            fetch-format="auto"
+            quality="auto"
+            :alt="`${alt ? alt : name}`"
+            class="mx-auto"
+          />
+        </div>
+        <div class="mt-2 flex">
+          <span class="bg-brand-700 rounded px-4 py-2 mx-auto">
+            {{ getC(show.contestnetId).name }} | עונה:{{
+              getC(show.contestnetId).session_number
+            }}
+          </span>
+        </div>
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script>
+export default {
+  props: ['contestants'],
+  data() {
+    return {
+      shows: [
+        {
+          publicId: 'v1623862283/danci-gadi_1_qfycii.gif',
+          contestnetId: '6077fed6a93beac05efc6910',
+          desc: 'דנסי',
+        },
+        {
+          publicId: 'v1623862022/ezgif-6-61643253f432_h7cmly.gif',
+          contestnetId: '6077fed6a93beac05efc6916',
+          desc: 'יובל',
+        },
+        {
+          publicId: 'v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.gif',
+          contestnetId: '60b8867b1653cc67f9aa7182',
+          desc: 'חגי',
+        },
+        {
+          publicId: 'v1623837100/s4e14-chicken_ui3xl9.gif',
+          contestnetId: '60b88f1accc85f85822661b1',
+          desc: 'מריאז',
+        },
+        {
+          publicId: 'v1623837078/star-wars-s3e14_s10871.gif',
+          contestnetId: '60b885e81653cc67f9aa7157',
+          desc: 'גלית',
+        },
+        {
+          publicId: 'v1623831880/clown-s2e15_gumhwc.gif',
+          contestnetId: '6077fed6a93beac05efc6933',
+          desc: 'יוסקה',
+        },
+        {
+          publicId: 'v1623831891/circus-s3e2_osejzp.gif',
+          contestnetId: '60b88fc3ccc85f85822661c0',
+          desc: 'נחמני',
+        },
+      ],
+    }
+  },
+  methods: {
+    getC(id) {
+      return this.contestants?.find((c) => c.id === id)
+    },
+  },
+}
+</script>
+
+<style></style>

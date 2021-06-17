@@ -6,7 +6,7 @@
       >
     </h3>
     <div class="md:flex justify-between gap-x-8 mb-12">
-      <common-box title="התיאור הארוך ביותר">
+      <common-box title="התיאור הארוך ביותר" class="md:w-3/6">
         <div v-if="longest" class="flex text-lg justify-between">
           <span class="w-4/6">
             <span class="font-extralight">למנה עיקרית: </span>
@@ -15,19 +15,23 @@
           <span class="text-lg">{{ longest[1].name }}</span>
         </div>
       </common-box>
-      <common-box title="הקצר ביותר">
-        <div v-if="shortest" class="flex text-lg justify-between">
-          <span class="w-4/6">
-            <span class="font-extralight">למנה עיקרית: </span>
-            {{ shortest[0] }}
-          </span>
-          <span class="text-lg">{{ shortest[1].name }}</span>
-        </div>
-      </common-box>
-      <common-box v-if="malbi" title="לקינוח: מלבי">
-        <div v-for="contestant in malbi" :key="contestant.id" class="my-2">
-          <common-sticker :name="contestant.name" />
-        </div>
+      <common-box v-if="malbi" title="לקינוח: מלבי" class="md:w-3/6">
+        <ul class="flex flex-wrap">
+          <li
+            v-for="contestant in malbi"
+            :key="contestant.id"
+            class="my-2 w-1/3"
+          >
+            <common-sticker
+              :id="contestant.id"
+              :name="contestant.name"
+              :src="contestant.avatar"
+              :width="`${
+                [3, 4].includes(+contestant.session_number) ? '150' : '90'
+              }`"
+            />
+          </li>
+        </ul>
       </common-box>
     </div>
     <div class="md:flex justify-between gap-x-8 mb-12">
@@ -69,6 +73,7 @@
             class="text-sm px-3 relative toglle-on-hover"
           >
             <common-sticker
+              :id="contestant.id"
               class=""
               :src="contestant.avatar"
               :width="`${

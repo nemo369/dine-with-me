@@ -18,6 +18,7 @@
             class="mx-auto pb-8 pt-1 h-full flex-col flex justify-between"
           >
             <common-sticker
+              :id="c.id"
               :name="getC(c.id).name"
               :src="getC(c.id).avatar"
               width="120"

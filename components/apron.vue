@@ -7,7 +7,7 @@
           :public-id="apron.publicId"
           fetch-format="auto"
           quality="auto"
-          :alt="`${alt ? alt : name}`"
+          :alt="`${getC(apron.contestnetId).name}`"
           class="mx-auto"
         />
         <div class="mt-4 flex">

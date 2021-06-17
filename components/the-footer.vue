@@ -1,16 +1,17 @@
 <template>
-  <footer class="footer py-1 bg-brand-700 text-brand-100">
-    Footer
-    <div
-      class="none opacity-0 hidden bg-green-400 bg-red-400 order-1 order-2 order-3"
-    >
-      tailwind shit
-    </div>
-  </footer>
+  <ol class="flex flex-wrap max-w-7xl px-3 mx-auto py-6 text-sm">
+    <li v-for="(c, index) in contestants" :key="c.id">
+      <nuxt-link :to="`contestant/${c.id}`" class="hover:underline flex">
+        <span>{{ c.name }}</span> <span class="mr-3">;</span>
+      </nuxt-link>
+    </li>
+  </ol>
 </template>
 
 <script>
-export default {}
+export default {
+  props: ['contestants'],
+}
 </script>
 
 <style></style>

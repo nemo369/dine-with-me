@@ -13,21 +13,22 @@
       הגישו בחד-פעמי
     </h4>
     <div
-      class="flex flex-wrap gap-x-4 gap-y-2 max-w-5xl justify-center mx-auto"
+      class="flex flex-wrap gap-x-4 gap-y-2 max-w-6xl justify-center mx-auto"
     >
       <div v-for="c in ppls" :key="c.id">
-        <div v-if="c.id === '60b885e81653cc67f9aa7158'">*</div>
-        <common-sticker
-          :src="getC(c.id).avatar"
-          class="flex-grow"
-          :width="`${
-            [3, 4].includes(+getC(c.id).session_number) ? '150' : '90'
-          }`"
-        >
-        </common-sticker>
-        <div v-if="c.id === '60b885e81653cc67f9aa7158'">
-          הביאה כלים חד פעמיים מהבית
+        <div v-if="c.note">*</div>
+        <div class="h-32">
+          <common-sticker
+            :id="c.id"
+            :src="getC(c.id).avatar"
+            class="flex-grow"
+            :width="`${
+              [3, 4].includes(+getC(c.id).session_number) ? '150' : '90'
+            }`"
+          >
+          </common-sticker>
         </div>
+        <div v-if="c.note">{{ c.note }}</div>
       </div>
     </div>
   </div>
@@ -43,6 +44,7 @@ export default {
           id: '6077fd498905dcba4d5a2922',
         },
         {
+          note: 'הגיש קינוח במפית',
           id: '6077fd498905dcba4d5a294b',
         },
         {
@@ -59,6 +61,7 @@ export default {
         },
         {
           id: '60b885e81653cc67f9aa7158',
+          note: 'הביאה כלים חד פעמיים מהבית',
         },
       ],
     }

@@ -3,10 +3,19 @@
     <div class="main-wrapper flex justify-center items-center bg-brand-300">
       <Nuxt />
     </div>
-    <footer class="footer py-3 bg-gray-700 text-brand-100 justify-center flex">
+    <footer
+      class="
+        footer
+        py-3
+        bg-gray-700
+        text-brand-100
+        justify-center
+        flex-col flex
+      "
+    >
       <div></div>
       <a
-        class="block nemo-logo logo"
+        class="block nemo-logo logo mx-auto mb-3"
         href="https://naamanfrenkel.dev/"
         target="_blank"
         rel="noopener noreferrer"
@@ -50,6 +59,12 @@
             ></path>
           </g></svg
       ></a>
+
+      <small class="block text-sm max-w-md mx-auto text-brand-100">
+        בואו לאכול איתי עונת הסטטיסטיקות הוא אתר מעריצים לסדרת הקאלט. לאתר אין
+        קשר ליוצרי ומפיקי התוכנית (כולל כאן 11 וגיל הפקות) אם נפלה טעות בנתונים
+        או נפגעו זכויות יוצרים אשמח שתיידעו אותי על מנת שאוכל לתקן בהקדם.
+      </small>
     </footer>
   </div>
 </template>

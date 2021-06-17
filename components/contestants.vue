@@ -46,6 +46,7 @@
       <common-box title="הציון הגבוה ביותר שניתן">
         <div class="flex justify-between items-center">
           <common-sticker
+            :id="best[1].id"
             :name="best[1].name"
             :src="best[1].avatar"
             :width="80"
@@ -57,6 +58,7 @@
             <svg-arrow />
           </div>
           <common-sticker
+            :id="best[0].id"
             :name="best[0].name"
             :src="best[0].avatar"
             :width="80"

@@ -15,6 +15,7 @@
     <div class="flex flex-wrap gap-x-6 gap-y-2 max-w-2xl mx-auto">
       <common-sticker
         v-for="c in ppls"
+        :id="c.id"
         :key="c.id"
         :src="getC(c.id).avatar"
         class="flex-grow"

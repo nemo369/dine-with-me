@@ -16,6 +16,7 @@
           <nuxt-link v-if="contestant" :to="`contestant/${contestant.id}`">
             <div class="w-28">
               <common-sticker
+                :id="contestant.id"
                 :width="`${
                   [3, 4].includes(+contestant.session_number) ? '120' : '70'
                 }`"
