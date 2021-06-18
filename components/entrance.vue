@@ -10,6 +10,7 @@
         <div class="rounded-lg overflow-hidden max-w-[600px] mx-auto">
           <client-only>
             <cld-image
+              loading="lazy"
               :public-id="entrance.publicId"
               fetch-format="auto"
               quality="auto"

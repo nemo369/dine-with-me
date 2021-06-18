@@ -20,6 +20,7 @@
       <common-box title="קריינים" :number="1">
         <client-only>
           <cld-image
+            loading="lazy"
             class="float-left"
             public-id="v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
             effect="trim"

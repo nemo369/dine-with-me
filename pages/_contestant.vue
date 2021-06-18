@@ -38,6 +38,7 @@
       >
         <cld-image
           v-if="contestant.avatar"
+          loading="lazy"
           :public-id="contestant.avatar.provider_metadata.public_id"
           :width="220"
           fetch-format="auto"

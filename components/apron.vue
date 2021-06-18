@@ -5,6 +5,7 @@
       <li v-for="apron in aprons" :key="apron.publicId" class="mb-10">
         <client-only>
           <cld-image
+            loading="lazy"
             :public-id="apron.publicId"
             fetch-format="auto"
             quality="auto"

@@ -23,7 +23,7 @@
     <div class="flex justify-center gap-x-8 mb-12">
       <svg-israel :contestants="contestants"></svg-israel>
     </div>
-    <div class="md:flex justify-between gap-x-8 mb-12">
+    <div class="lg:flex justify-between gap-x-8 mb-12">
       <common-box title="המשתתפים הגרועים ביותר">
         <podium
           color="bg-brand-700 border-brand-900"
@@ -80,7 +80,7 @@
       <common-box title="מתמודדים שבכו" :number="cry.length"> </common-box>
     </div>
     <not-eating />
-    <div class="md:flex justify-between gap-x-8 mb-12">
+    <div class="lg:flex justify-between gap-x-8 mb-12">
       <uniq-sessions :contestants="contestants" />
       <uniq-order :contestants="contestants" />
       <common-box v-if="beniamin" title="משתתפים שנפסלו">

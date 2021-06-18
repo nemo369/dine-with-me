@@ -74,7 +74,7 @@ body {
 }
 main {
   margin-top: 24px;
-  max-width: calc(100% - 0.1vw);
+  max-width: calc(100% - 8px);
 
 }
 @media (min-width: 768px) {

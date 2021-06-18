@@ -3,6 +3,7 @@
     <div class="sticker flex items-end">
       <client-only>
         <cld-image
+          loading="lazy"
           :public-id="src.provider_metadata.public_id"
           :width="width"
           :height="width"

@@ -72,6 +72,11 @@ export default {
           content: this.description
         },
         {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        {
           hid: 'twitter:image',
           name: 'twitter:image',
           content: this.image

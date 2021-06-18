@@ -10,6 +10,7 @@
         <div class="rounded-lg overflow-hidden max-w-[600px] mx-auto">
           <client-only>
             <cld-image
+              loading="lazy"
               :public-id="show.publicId"
               :alt="getC(show.contestnetId).name"
               class="mx-auto"

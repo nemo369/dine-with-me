@@ -8,11 +8,16 @@
     <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="התיאור הארוך ביותר" class="md:w-3/6">
         <div v-if="longest" class="flex flex-wrap text-lg justify-between">
-          <span class="w-4/6">
+          <span>
             <span class="font-extralight">למנה עיקרית: </span>
             {{ longest[0] }}
           </span>
-          <span class="text-lg">{{ longest[1].name }}</span>
+          <common-<common-sticker
+            :id="longest[1].id"
+            :name="longest[1].name"
+            :src="longest[1].avatar"
+            width="120"
+          />
         </div>
       </common-box>
       <common-box v-if="malbi" title="לקינוח: מלבי" class="md:w-3/6">
