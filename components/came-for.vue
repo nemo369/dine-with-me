@@ -12,7 +12,7 @@
     <blockquote class="text-brand-100 text-center font-thin mb-10 text-3xl">
       אני/אנחנו _________.
     </blockquote>
-    <div class="grid grid-cols-2 gap-y-1 gap-x-4">
+    <div class="grid md:grid-cols-2 gap-y-1 gap-x-4">
       <div v-for="c in ppls" :key="c.id" class="flex py-2 px-4 bg-brand shadow">
         <span>"...{{ c.quote }}"</span>
         <span class="mr-1 ml-4">|</span>

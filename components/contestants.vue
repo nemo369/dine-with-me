@@ -7,7 +7,7 @@
     </h3>
     <clean-sick :contestants="contestants" />
 
-    <div class="grid grid-cols-2 justify-between gap-x-8 mb-12">
+    <div class="grid md:grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
         <div class="flex">
           <ul class="text-2xl gap-x-3">
@@ -18,7 +18,7 @@
           <svg-gender />
         </div>
       </common-box>
-      <common-box title="ממוצע גילים" :number="ages" />
+      <common-box title="ממוצע גילים" :number="ages"></common-box>
     </div>
     <div class="flex justify-center gap-x-8 mb-12">
       <svg-israel :contestants="contestants"></svg-israel>
@@ -40,7 +40,7 @@
       </common-box>
     </div>
     <uniq-realty :contestants="contestants" />
-    <div class="flex justify-around gap-x-8 mb-12">
+    <div class="md:flex justify-around gap-x-8 mb-12">
       <common-box title="עורכי דין" :number="lawyrs.length"> </common-box>
       <common-box title="LGBTQ 🏳️‍🌈" :number="lgbtq.length"> </common-box>
       <common-box title="הציון הגבוה ביותר שניתן">
@@ -75,12 +75,12 @@
         </div>
       </common-box>
     </div>
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="התקפי צחוק" :number="laugh.length"> </common-box>
       <common-box title="מתמודדים שבכו" :number="cry.length"> </common-box>
     </div>
     <not-eating />
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <uniq-sessions :contestants="contestants" />
       <uniq-order :contestants="contestants" />
       <common-box v-if="beniamin" title="משתתפים שנפסלו">
@@ -103,10 +103,18 @@
 
 <script>
 import { COUPLES_SESSIONS } from '../utils/utils'
-import podium from './podium.vue'
 export default {
-  components: { podium },
-  props: ['contestants', 'weeks'],
+  props: {
+    contestants: {
+      type: Array,
+      default: () => [],
+    },
+    weeks: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  // props: ['contestants', 'weeks'],
   data() {
     return {
       laugh: [

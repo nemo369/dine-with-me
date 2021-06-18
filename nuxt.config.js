@@ -42,9 +42,14 @@ export default {
     '@nuxtjs/tailwindcss',
     // Doc: https://cloudinary.nuxtjs.org/setup
     '@nuxtjs/cloudinary',
+    // https://google-analytics.nuxtjs.org/setup
+    '@nuxtjs/google-analytics',
   ],
   tailwindcss: {
     jit: true,
+  },
+  googleAnalytics: {
+    id: 'G-3T6HXSXPJ9',
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/cloudinary'],

@@ -3,13 +3,15 @@
     <h4 class="text-center mb-6 text-2xl">סינרים</h4>
     <ul class="md:grid md:grid-cols-3 gap-x-4cx gap-y-10">
       <li v-for="apron in aprons" :key="apron.publicId" class="mb-10">
-        <cld-image
-          :public-id="apron.publicId"
-          fetch-format="auto"
-          quality="auto"
-          :alt="`${getC(apron.contestnetId).name}`"
-          class="mx-auto"
-        />
+        <client-only>
+          <cld-image
+            :public-id="apron.publicId"
+            fetch-format="auto"
+            quality="auto"
+            :alt="`${getC(apron.contestnetId).name}`"
+            class="mx-auto"
+          />
+        </client-only>
         <div class="mt-4 flex">
           <span class="bg-brand-700 rounded px-4 py-2 mx-auto">{{
             getC(apron.contestnetId).name
@@ -22,7 +24,12 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: {
+    contestants: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       aprons: [

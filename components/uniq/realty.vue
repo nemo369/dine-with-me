@@ -1,8 +1,8 @@
 <template>
   <section class="section mb-28 mt-16">
-    <div class="grid grid-cols-2 justify-between gap-x-8 mb-12">
+    <div class="grid md:grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="האח הגדול">
-        <div class="flex items-center gap-x-3">
+        <div class="flex items-center gap-x-3 flex-wrap">
           <div class="number ml-auto">{{ bigBrother.length }}</div>
           <common-sticker
             v-for="c in bigBrother"
@@ -28,9 +28,9 @@
         </div>
       </common-box>
     </div>
-    <div class="flex justify-between gap-x-8 mb-12">
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="גולסטאר">
-        <div class="flex items-center">
+        <div class="flex items-center flex-wrap">
           <div class="number">{{ golstar.length }}</div>
           <common-sticker
             v-for="c in golstar"
@@ -43,7 +43,7 @@
         </div>
       </common-box>
       <common-box title="כוכבי ילדים">
-        <div class="flex items-center">
+        <div class="flex items-center flex-wrap">
           <div class="number ml-auto">2</div>
           <common-sticker
             :id="gadi.id"

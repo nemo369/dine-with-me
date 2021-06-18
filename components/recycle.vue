@@ -13,7 +13,7 @@
       הגישו בחד-פעמי
     </h4>
     <div
-      class="flex flex-wrap gap-x-4 gap-y-2 max-w-6xl justify-center mx-auto"
+      class="sm:flex flex-wrap gap-x-4 gap-y-2 max-w-6xl justify-center mx-auto"
     >
       <div v-for="c in ppls" :key="c.id">
         <div v-if="c.note">*</div>

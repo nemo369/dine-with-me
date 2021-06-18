@@ -17,7 +17,7 @@
         >"</span
       >
     </blockquote>
-    <div class="grid grid-cols-2 gap-y-1 gap-x-4">
+    <div class="grid md:grid-cols-2 gap-y-1 gap-x-4">
       <div
         v-for="c in ppls"
         :key="c.id"

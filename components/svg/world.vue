@@ -1,7 +1,14 @@
 <template>
-  <div class="svg relative w-full">
+  <div class="svg relative w-full max-w-full overflow-auto">
     <svg
-      class="w-full block fill-current text-brand-900 world-map-svg"
+      class="
+        w-full
+        block
+        fill-current
+        text-brand-900
+        world-map-svg
+        min-w-[600px]
+      "
       xmlns:mapsvg="http://mapsvg.com"
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

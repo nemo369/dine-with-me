@@ -3,8 +3,10 @@
     <h4 class="pb-2">{{ title }}</h4>
     <svg-hr />
     <div class="number text-5xl mt-2">
-      {{ number }}
-      <slot></slot>
+      <span v-if="number">{{ number }}</span>
+      <client-only>
+        <slot></slot>
+      </client-only>
     </div>
   </div>
 </template>

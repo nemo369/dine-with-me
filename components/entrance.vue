@@ -7,20 +7,24 @@
     </h3>
     <ul class="md:grid md:grid-cols-2 gap-x-4 gap-y-10 justify-center">
       <li v-for="entrance in entrances" :key="entrance.publicId" class="mb-10">
-        <div class="rounded-lg overflow-hidden max-w-[600px] h-[337px] mx-auto">
-          <cld-image
-            :public-id="entrance.publicId"
-            fetch-format="auto"
-            quality="auto"
-            :alt="`${alt ? alt : name}`"
-            class="mx-auto"
-          />
+        <div class="rounded-lg overflow-hidden max-w-[600px] mx-auto">
+          <client-only>
+            <cld-image
+              :public-id="entrance.publicId"
+              fetch-format="auto"
+              quality="auto"
+              :alt="`${getC(entrance.contestnetId).name}`"
+              class="mx-auto"
+            />
+          </client-only>
         </div>
         <div class="mt-2 flex">
           <span class="bg-brand-700 rounded px-4 py-2 mx-auto">
-            {{ getC(entrance.contestnetId).name }} | עונה:{{
-              getC(entrance.contestnetId).session_number
-            }}
+            <nuxt-link :to="`/${entrance.contestnetId}`">
+              {{ getC(entrance.contestnetId).name }} | עונה:{{
+                getC(entrance.contestnetId).session_number
+              }}
+            </nuxt-link>
           </span>
         </div>
       </li>
@@ -30,7 +34,12 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: {
+    contestants: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       entrances: [
@@ -40,7 +49,7 @@ export default {
           desc: 'יורם',
         },
         {
-          publicId: '',
+          publicId: 'v1623938928/ezgif-2-63e8c1d8ab2c_c9hvkg.gif',
           contestnetId: '6077fd498905dcba4d5a294a',
           desc: 'רחל',
         },

@@ -1,17 +1,18 @@
 <template>
-  <nuxt-link :to="`contestant/${id}`">
-    <div v-if="src" class="sticker flex items-end">
-      <cld-image
-        :public-id="src.provider_metadata.public_id"
-        :width="width"
-        :height="width"
-        fetch-format="auto"
-        quality="auto"
-        effect="trim"
-        class="z-[1] relative"
-        :alt="`${alt ? alt : name}`"
-      />
-
+  <nuxt-link :to="`/${id}`">
+    <div class="sticker flex items-end">
+      <client-only>
+        <cld-image
+          :public-id="src.provider_metadata.public_id"
+          :width="width"
+          :height="width"
+          fetch-format="auto"
+          quality="auto"
+          effect="trim"
+          class="z-[1] relative"
+          :alt="`${alt ? alt : name}`"
+        />
+      </client-only>
       <div
         v-if="name"
         class="
@@ -41,7 +42,7 @@
 <script>
 export default {
   name: 'Box',
-  props: ['name', 'src', 'width', 'alt'],
+  props: ['name', 'src', 'width', 'alt', 'id'],
   methods: {
     getName(name) {
       const [first, last] = name.split(',')

@@ -1,5 +1,5 @@
 <template>
-  <main v-if="contestants" class="main min-h-screen bg-brand rounded-md">
+  <main class="main min-h-screen bg-brand rounded-md">
     <welcome :contestants="contestants.length" />
     <article class="mx-auto py-10 px-4">
       <genrael :contestants="contestants" :weeks="weeks" />
@@ -19,9 +19,9 @@
       <apron :contestants="contestants" />
       <more :contestants="contestants" />
     </article>
-    <footer>
+    <div>
       <the-footer :contestants="contestants" />
-    </footer>
+    </div>
   </main>
 </template>
 
@@ -32,22 +32,27 @@ import { rnd } from '../utils/utils'
 
 export default {
   components: { theFooter },
+  async asyncData() {
+    const weeks = await fetch(`${process.env.API_ENDPOINT}weeks?_limit=-1`).then(
+      (res) => res.json()
+    )
+
+    const contestants = await fetch(
+      `${process.env.API_ENDPOINT}contestants?_limit=-1`
+    ).then((res) => res.json())
+
+    return {contestants ,weeks}
+  },
   data() {
     return {
       weeks: [],
       contestants: [],
       hue: rnd(150,360),
-      dir:-1
+      dir:-1,
+      title:'בואו לאכול איתי עונת הסטטיסטיקות',
+      description:'סטטיסטיקות ועובדות מורכבות לאורך כל העונות של בואו לאכול איתי',
+      image:'http://dinewithme.co.il/image.png'
     }
-  },
-  async fetch() {
-    this.weeks = await fetch(`${process.env.API_ENDPOINT}weeks?_limit=-1`).then(
-      (res) => res.json()
-    )
-
-    this.contestants = await fetch(
-      `${process.env.API_ENDPOINT}contestants?_limit=-1`
-    ).then((res) => res.json())
   },
   head() {
     return {
@@ -56,12 +61,51 @@ export default {
         class: 'home-page',
       },
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'סטטיסטיקות ועובדות מורכבות לאורך כל העונות של בואו לאכול איתי',
+      {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
         },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.image
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: this.title
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.image
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.image
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.title
+        }
       ],
     }
   },

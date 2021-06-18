@@ -1,6 +1,16 @@
 <template>
   <section
-    class="text-center bg-brand-700 py-10 rounded flex flex-col align-center justify-center border-yellow border shadow"
+    class="
+      text-center
+      bg-brand-700
+      py-10
+      rounded
+      flex flex-col
+      align-center
+      justify-center
+      border-yellow border
+      shadow
+    "
   >
     <logo />
     <h2 class="text-5xl NuxtLogo my-3">עונת הסטטיסטיקות</h2>
@@ -17,7 +27,7 @@
         contestants
       }}</span>
 
-      בשלנים (וזוגות בשלנים) חובבים<br />
+      בשלנים וזוגות חובבים<br />
       שאוהבים לארח ואוהבים לנצח <br />
     </p>
   </section>

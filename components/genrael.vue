@@ -1,25 +1,43 @@
 <template>
   <section class="section mb-28 mt-16">
     <h2 class="subtitle tac my-6 flex justify-center text-xl font-light">
-      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
-        >על בואו לאכול איתי</span
-      >
+      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900">
+        על בואו לאכול איתי
+      </span>
     </h2>
-    <div class="grid grid-cols-3 justify-between gap-3 mb-6">
+    <div
+      class="
+        md:grid md:grid-cols-3
+        grid-cols-2
+        justify-between
+        gap-3
+        md:mb-6
+        mb-10
+      "
+    >
       <common-box title="מספר משתתפים" :number="contestantsNumber" />
       <common-box title="טיולים קולינריים לאיטליה  🇮🇹" :number="weeksNumber" />
-      <common-box title="קריינים">
-        <div class="flex justify-between items-center">
-          <div class="number">1</div>
-
-          <img
+      <common-box title="קריינים" :number="1">
+        <client-only>
+          <cld-image
+            class="float-left"
+            public-id="v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
+            effect="trim"
             alt="שי אביבי"
-            src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
           />
-        </div>
+        </client-only>
       </common-box>
     </div>
-    <div class="grid grid-cols-2 justify-between gap-3 mb-6">
+    <div
+      class="
+        md:grid md:grid-cols-2
+        justify-between
+        gap-3
+        md:mb-6
+        mb-10
+        clear-both
+      "
+    >
       <common-box title="סוגי עונות">
         <div class="flex gap-x-6">
           <div class="flex gap-x-1">

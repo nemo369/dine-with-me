@@ -41,7 +41,7 @@
         </li>
       </ul>
     </div>
-    <div class="w-60">
+    <div class="sm:w-60">
       <common-box
         class="w-full mb-4"
         title="לבשו מנומר"

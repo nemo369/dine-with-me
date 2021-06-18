@@ -7,20 +7,22 @@
     </h3>
     <ul class="md:grid md:grid-cols-2 gap-x-4 gap-y-10 justify-center">
       <li v-for="show in shows" :key="show.publicId" class="mb-10">
-        <div class="rounded-lg overflow-hidden max-w-[600px] h-[337px] mx-auto">
-          <cld-image
-            :public-id="show.publicId"
-            fetch-format="auto"
-            quality="auto"
-            :alt="`${alt ? alt : name}`"
-            class="mx-auto"
-          />
+        <div class="rounded-lg overflow-hidden max-w-[600px] mx-auto">
+          <client-only>
+            <cld-image
+              :public-id="show.publicId"
+              :alt="getC(show.contestnetId).name"
+              class="mx-auto"
+            />
+          </client-only>
         </div>
         <div class="mt-2 flex">
           <span class="bg-brand-700 rounded px-4 py-2 mx-auto">
-            {{ getC(show.contestnetId).name }} | עונה:{{
-              getC(show.contestnetId).session_number
-            }}
+            <nuxt-link :to="`/${show.contestnetId}`">
+              {{ getC(show.contestnetId).name }} | עונה:{{
+                getC(show.contestnetId).session_number
+              }}
+            </nuxt-link>
           </span>
         </div>
       </li>
@@ -30,8 +32,15 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: {
+    contestants: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
+    // https://res.cloudinary.com/diowvie2f/image/upload/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.gif
+    // https://res.cloudinary.com/diowvie2f/image/upload/f_auto,q_auto/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.gif
     return {
       shows: [
         {

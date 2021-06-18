@@ -5,7 +5,7 @@
         <ul
           class="
             mb-8
-            grid grid-cols-2
+            grid grid-cols-1
             md:grid-cols-3
             items-center
             justify-center

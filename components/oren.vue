@@ -2,7 +2,7 @@
   <section class="section mb-28 mt-16">
     <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="הופעת אורח בפרק שבו ההורים שלהם השתתפו">
-        <div class="flex items-center">
+        <div class="flex items-center flex-wrap">
           <div class="number">1</div>
           <common-sticker
             id="oren.id"
@@ -13,7 +13,7 @@
         </div>
       </common-box>
       <common-box title="רצו בבחירות לכנסת וקיבלו 0.06% מהקולות">
-        <div class="flex items-center">
+        <div class="flex items-center flex-wrap">
           <div class="number">1</div>
           <common-sticker
             id="oren.id"
@@ -24,7 +24,7 @@
         </div>
       </common-box>
       <common-box title="צילמו סלפי עם דונלד טרמפ">
-        <div class="flex items-center">
+        <div class="flex items-center flex-wrap">
           <div class="number">1</div>
           <common-sticker
             :id="oren.id"

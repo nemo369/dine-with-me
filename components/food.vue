@@ -1,13 +1,13 @@
 <template>
   <section class="section mb-28 mt-16">
     <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
-      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
-        >אוכל</span
-      >
+      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900">
+        אוכל
+      </span>
     </h3>
     <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="התיאור הארוך ביותר" class="md:w-3/6">
-        <div v-if="longest" class="flex text-lg justify-between">
+        <div v-if="longest" class="flex flex-wrap text-lg justify-between">
           <span class="w-4/6">
             <span class="font-extralight">למנה עיקרית: </span>
             {{ longest[0] }}
@@ -18,9 +18,9 @@
       <common-box v-if="malbi" title="לקינוח: מלבי" class="md:w-3/6">
         <ul class="flex flex-wrap">
           <li
-            v-for="contestant in malbi"
-            :key="contestant.id"
-            class="my-2 w-1/3"
+            v-for="(contestant, index) in malbi"
+            :key="index"
+            class="my-2 xl:w-1/3 md:w-1/2"
           >
             <common-sticker
               :id="contestant.id"
@@ -38,8 +38,8 @@
       <common-box v-if="sacvhice" title="סביצ׳ה">
         <ul class="text-sm list-disc list-inside">
           <li
-            v-for="contestant in sacvhice"
-            :key="contestant.id"
+            v-for="(contestant, index) in sacvhice"
+            :key="index"
             class="my-2 px-3"
           >
             <span v-if="contestant.first_course.join().includes(`סביצ`)"
@@ -68,8 +68,8 @@
       <common-box v-if="coscos" title="קוסקוס" class="flex-grow">
         <div class="flex flex-wrap max-w-2xl">
           <div
-            v-for="contestant in coscos"
-            :key="contestant.id"
+            v-for="(contestant, index) in coscos"
+            :key="index"
             class="text-sm px-3 relative toglle-on-hover"
           >
             <common-sticker
@@ -145,8 +145,8 @@
       >
         <ul class="list-disc list-inside">
           <li
-            v-for="contestant in grandma"
-            :key="contestant.id"
+            v-for="(contestant, index) in grandma"
+            :key="index"
             class="my-6 px-3 leading-4 text-sm"
           >
             <span v-if="contestant.course" class="w-3/6 text-base"
@@ -165,7 +165,16 @@
 
 <script>
 export default {
-  props: ['contestants', 'weeks'],
+  props: {
+    contestants: {
+      type: Array,
+      default: () => [],
+    },
+    weeks: {
+      type: Array,
+      default: () => [],
+    },
+  },
   computed: {
     longest() {
       const allDishes = this.contestants

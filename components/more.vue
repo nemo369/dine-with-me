@@ -15,7 +15,12 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: {
+    contestants: {
+      type: Array,
+      default: () => [],
+    },
+  },
 }
 </script>
 

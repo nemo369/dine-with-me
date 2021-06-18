@@ -73,8 +73,14 @@ body {
   background-size: 102% auto;
 }
 main {
-  max-width: calc(100% - 5vw);
   margin-top: 24px;
+  max-width: calc(100% - 0.1vw);
+
+}
+@media (min-width: 768px) {
+  main {
+    max-width: calc(100% - 5vw);
+  }
 }
 
 .number {
