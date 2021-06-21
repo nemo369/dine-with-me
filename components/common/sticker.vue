@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="`/${id}`">
     <div class="sticker flex items-end">
-      <client-only>
+      <client-only v-if="src">
         <cld-image
           loading="lazy"
           :public-id="src.provider_metadata.public_id"
@@ -10,7 +10,7 @@
           fetch-format="auto"
           quality="auto"
           effect="trim"
-          class="z-[1] relative"
+          class="z-[1] relative text-xs"
           :alt="`${alt ? alt : name}`"
         />
       </client-only>

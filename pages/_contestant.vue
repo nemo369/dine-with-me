@@ -44,7 +44,7 @@
           fetch-format="auto"
           quality="auto"
           effect="trim"
-          class="z-[1] relative mx-auto"
+          class="z-[1] relative mx-auto text-xs"
           :alt="`${contestant.name}`"
         />
         <h1 class="text-white font-bold my-2 text-center text-5xl">
@@ -91,6 +91,7 @@
           <span class="w-1 h-1 rounded-full bg-brand-700 mx-2"></span>
           <span> ציון סופי: {{ contestant.score }} </span>
         </h3>
+        <div v-if="contestant.more_info" v-html="contestant.more_info"></div>
         <div v-for="(value, key) in contestant" :key="key">
           <div
             v-if="keyToString(key) && value"

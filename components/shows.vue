@@ -13,7 +13,7 @@
               loading="lazy"
               :public-id="show.publicId"
               :alt="getC(show.contestnetId).name"
-              class="mx-auto"
+              class="mx-auto text-xs"
             />
           </client-only>
         </div>

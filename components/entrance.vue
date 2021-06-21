@@ -15,7 +15,7 @@
               fetch-format="auto"
               quality="auto"
               :alt="`${getC(entrance.contestnetId).name}`"
-              class="mx-auto"
+              class="mx-auto text-xs"
             />
           </client-only>
         </div>

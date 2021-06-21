@@ -1,5 +1,5 @@
 <template>
-  <main class="main min-h-screen bg-brand rounded-md">
+  <main v-if="contestants.length" class="main min-h-screen bg-brand rounded-md">
     <welcome :contestants="contestants.length" />
     <article class="mx-auto py-10 px-4">
       <genrael :contestants="contestants" :weeks="weeks" />

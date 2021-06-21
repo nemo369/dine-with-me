@@ -10,7 +10,7 @@
             fetch-format="auto"
             quality="auto"
             :alt="`${getC(apron.contestnetId).name}`"
-            class="mx-auto"
+            class="mx-auto text-xs"
           />
         </client-only>
         <div class="mt-4 flex">

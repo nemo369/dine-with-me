@@ -46,32 +46,37 @@
       <common-box title="הציון הגבוה ביותר שניתן">
         <div class="flex justify-between items-center">
           <common-sticker
-            :id="best[1].id"
-            :name="best[1].name"
-            :src="best[1].avatar"
-            :width="80"
-          />
-          <div class="text-xl">
-            <span>
-              {{ best[0].score }}
-            </span>
-            <svg-arrow />
-          </div>
-          <common-sticker
             :id="best[0].id"
-            :name="best[0].name"
-            :src="best[0].avatar"
+            :name="getC(best[0].id).name"
+            :src="getC(best[0].id).avatar"
             :width="80"
           />
         </div>
+        <p class="text-sm">*נתנה ציון 10 לכל אחד מארבעת המתמודדים מולה</p>
       </common-box>
       <common-box title="הציון הנמוך ביותר שהוענק">
-        <div class="flex justify-between items-center">
-          <div class="number">0</div>
-          <!-- <common-sticker
-            name="שי אביבי"
-            src="https://res.cloudinary.com/diowvie2f/image/upload/v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
-          /> -->
+        <div class="">
+          <div class="flex justify-between items-center">
+            <common-sticker
+              :id="lowest[0].id"
+              :name="getC(lowest[0].id).name"
+              :src="getC(lowest[0].id).avatar"
+              :width="80"
+            />
+            <div class="text-2xl w-10 fill-current">
+              <span> 0 </span>
+              <svg-arrow-home />
+            </div>
+            <common-sticker
+              :id="lowest[1].id"
+              :name="getC(lowest[1].id).name"
+              :src="getC(lowest[1].id).avatar"
+              :width="80"
+            />
+          </div>
+          <div class="text-sm">
+            *הציון הנמוך ביותר שנאפשר להעניק הוא 1, אז הוא קיפל את הציון של 10
+          </div>
         </div>
       </common-box>
     </div>
@@ -180,12 +185,14 @@ export default {
         (c) => c.job?.includes('עורך דין') || c.job?.includes('עורכת דין')
       )
     },
+    lowest() {
+      return [
+        { id: '6077fed6a93beac05efc6927' },
+        { id: '6077fed6a93beac05efc6924' },
+      ]
+    },
     best() {
-      if (!this.contestants) return []
-      const sorted = [...this.contestants].sort((a, b) =>
-        a.score < b.score ? 1 : a.score > b.score ? -1 : 0
-      )
-      return sorted.filter((contestant) => contestant.score)
+      return [{ id: '6077fd498905dcba4d5a2939' }]
     },
     orderByScored() {
       if (!this.contestants) return []
@@ -193,6 +200,11 @@ export default {
         a.score < b.score ? 1 : a.score > b.score ? -1 : 0
       )
       return sorted.filter((contestant) => contestant.score)
+    },
+  },
+  methods: {
+    getC(id) {
+      return this.contestants?.find((c) => c.id === id) || {}
     },
   },
 }
