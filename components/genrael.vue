@@ -1,7 +1,17 @@
 <template>
   <section class="section mb-28 mt-16">
     <h2
-      class="subtitle tac mt-32 mb-10 flex justify-center text-2xl font-light"
+      class="
+        subtitle
+        tac
+        lg:mt-32
+        mt-6
+        mb-10
+        flex
+        justify-center
+        text-2xl
+        font-light
+      "
     >
       <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900">
         על בואו לאכול איתי

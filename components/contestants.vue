@@ -22,6 +22,7 @@
               public-id="v1626107419/images_rthlod.jpg"
               fetch-format="auto"
               quality="auto"
+              width="450"
               :alt="`יש נקבה יש זכר ויש גיי`"
             />
           </div>
