@@ -5,7 +5,12 @@ const dynamicRoutes = () => {
   return axios
     .get(`${process.env.API_ENDPOINT}contestants?_limit=-1`)
     .then((res) => {
-      return res.data.map((contestant) => `/${contestant.id}`)
+      return res.data.map((contestant) => {
+        return {
+          route: '/' + contestant.id,
+          payload: contestant,
+        }
+      })
     })
 }
 export default {
@@ -78,18 +83,7 @@ export default {
   },
   generate: {
     generate: {
-      routes() {
-        return axios
-          .get(`${process.env.API_ENDPOINT}contestants?_limit=-1`)
-          .then((res) => {
-            return res.data.map((contestant) => {
-              return {
-                route: '/' + contestant.id,
-                payload: contestant,
-              }
-            })
-          })
-      },
+      routes: dynamicRoutes,
     },
   },
 }
