@@ -77,9 +77,11 @@ export default {
     episodes() {
       let total = 0
       this.weeks?.forEach((week) => {
-        const [first, last] = week?.episodes?.split('-')
-        const sum = parseInt(last) - parseInt(first) + 1
-        total += sum
+        if (week && week.episodes) {
+          const [first, last] = week.episodes?.split('-')
+          const sum = parseInt(last) - parseInt(first) + 1
+          total += sum
+        }
       })
       return total
     },

@@ -70,7 +70,9 @@
           ></span>
           <span> עונה: {{ contestant.session_number }}</span>
           <span class="w-1 h-1 rounded-full bg-brand-700 mx-2"></span>
-          <span> פרקים: {{ contestant.week.episodes }} </span>
+          <span v-if="contestant.week">
+            פרקים: {{ contestant.week.episodes }}
+          </span>
           <span class="w-1 h-1 rounded-full bg-brand-700 mx-2"></span>
         </h2>
         <h3
@@ -130,7 +132,7 @@
               [3, 4].includes(+contestant.session_number) ? 'איתם' : 'איתו'
             }`"
           >
-            <div class="text-lg">
+            <div v-if="contestant.week" class="text-lg">
               {{ contestant.week.contestants_as_string }}
               | שבוע {{ contestant.week.description }}
             </div>
