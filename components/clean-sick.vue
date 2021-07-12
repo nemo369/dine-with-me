@@ -10,6 +10,16 @@
     "
   >
     <h4 class="text-brand-100 text-center font-thin mb-10 text-3xl">
+      <cld-image
+        loading="lazy"
+        public-id="v1626112173/83018372_2803955769647316_8178260812742262784_n_ajofaa.jpg"
+        fetch-format="auto"
+        quality="auto"
+        class="rounded mt-4 mx-auto"
+        width="450"
+        :alt="`מחלת הספונג׳ה והטלפיים`"
+      />
+
       חולי ניקיון
     </h4>
     <div class="flex flex-wrap gap-x-6 gap-y-2 max-w-2xl mx-auto">

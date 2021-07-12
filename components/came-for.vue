@@ -10,6 +10,15 @@
     "
   >
     <blockquote class="text-brand-100 text-center font-thin mb-10 text-3xl">
+      <cld-image
+        loading="lazy"
+        public-id="v1626112426/73375409_2615358545173707_3258313120191348736_n_jlniu2.jpg"
+        fetch-format="auto"
+        quality="auto"
+        width="450"
+        class="rounded mt-4 mx-auto"
+        :alt="`רועי עידן וחגית השמשוני - ברור שהואכל שלנו הכי טעים`"
+      />
       אני/אנחנו _________.
     </blockquote>
     <div class="grid md:grid-cols-2 gap-y-2 gap-x-4">
