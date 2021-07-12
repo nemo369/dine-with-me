@@ -15,8 +15,8 @@
         </div>
       </common-box>
       <common-box title="ביק אוף ישראל">
-        <div class="flex justify-between items-center">
-          <div class="number">{{ bakeOf.length }}</div>
+        <div class="flex items-center">
+          <div class="number ml-2">{{ bakeOf.length }}</div>
           <common-sticker
             v-for="c in bakeOf"
             :id="c.id"

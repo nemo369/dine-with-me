@@ -5,7 +5,7 @@
         <div
           v-for="(contestant, index) in reArragne"
           :key="index"
-          :class="`h-full ${color} border pb-4 w-28`"
+          :class="`text-center h-full ${color} border pb-4 w-28`"
           :style="`height:${getHeight(index)}px`"
         >
           {{ contestant.score }}

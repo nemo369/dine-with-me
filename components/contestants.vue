@@ -1,21 +1,30 @@
 <template>
   <section class="section mb-28 mt-16">
-    <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
+    <h3
+      class="subtitle tac mt-32 mb-10 flex justify-center text-2xl font-light"
+    >
       <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
         >המשתתפים</span
       >
     </h3>
     <clean-sick :contestants="contestants" :entities="entities" />
-
     <div class="grid md:grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
-        <div class="flex">
-          <ul class="text-2xl gap-x-3">
+        <div class="sm:flex">
+          <ul class="text-2xl gap-x-3 ml-3">
             <li v-for="(value, name) in genders" :key="value">
               {{ name }}: {{ value }}
             </li>
           </ul>
-          <svg-gender />
+          <div class="rounded-lg overflow-hidden">
+            <cld-image
+              loading="lazy"
+              public-id="v1626107419/images_rthlod.jpg"
+              fetch-format="auto"
+              quality="auto"
+              :alt="`יש נקבה יש זכר ויש גיי`"
+            />
+          </div>
         </div>
       </common-box>
       <common-box title="ממוצע גילים" :number="ages"></common-box>
@@ -40,7 +49,7 @@
       </common-box>
     </div>
     <uniq-realty :contestants="contestants" :entities="entities" />
-    <div class="md:flex justify-around gap-x-8 mb-12">
+    <div class="md:flex justify-around gap-x-8 mb-12 flex-wrap">
       <common-box title="עורכי דין" :number="lawyrs.length"> </common-box>
       <common-box title="LGBTQ 🏳️‍🌈" :number="lgbtq.length"> </common-box>
       <common-box title="הציון הגבוה ביותר שניתן">
@@ -54,9 +63,11 @@
         </div>
         <p class="text-sm">*נתנה ציון 10 לכל אחד מארבעת המתמודדים מולה</p>
       </common-box>
+    </div>
+    <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="הציון הנמוך ביותר שהוענק">
         <div class="">
-          <div class="flex justify-between items-center">
+          <div class="flex gap-x-2 items-center flex-wrap">
             <common-sticker
               :id="lowest[0].id"
               :name="getC(lowest[0].id).name"
@@ -75,7 +86,7 @@
             />
           </div>
           <div class="text-sm">
-            *הציון הנמוך ביותר שנאפשר להעניק הוא 1, אז הוא קיפל את הציון של 10
+            *הציון הנמוך ביותר שאפשר להעניק הוא 1, אז הוא קיפל את דף הציון של 10
           </div>
         </div>
       </common-box>

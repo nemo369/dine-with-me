@@ -1,7 +1,7 @@
 <template>
   <main v-if="contestants.length" class="main min-h-screen bg-brand rounded-md">
     <welcome :contestants="contestants.length" />
-    <article class="mx-auto py-10 px-4">
+    <article class="mx-auto py-10 sm:px-4 px-1">
       <genrael :contestants="contestants" :entities="entities" :weeks="weeks" />
       <came-for :contestants="contestants" :entities="entities" />
       <contestants

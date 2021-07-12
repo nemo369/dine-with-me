@@ -1,8 +1,10 @@
 <template>
   <section class="section mb-28 mt-16">
-    <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
-      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900"
-        >קטע אומנותי</span
+    <h3
+      class="subtitle tac mt-32 mb-10 flex justify-center text-2xl font-light"
+    >
+      <span class="py-1 sm:px-6 bg-brand-100 rounded shadow text-brand-900"
+        >ועכשיו לקטע האומנותי</span
       >
     </h3>
     <ul class="md:grid md:grid-cols-2 gap-x-4 gap-y-10 justify-center">
@@ -18,7 +20,7 @@
           </client-only>
         </div>
         <div class="mt-2 flex">
-          <span class="bg-brand-700 rounded px-4 py-2 mx-auto">
+          <span class="bg-brand-700 rounded sm:px-4 py-2 mx-auto">
             <nuxt-link :to="`/${show.contestnetId}`">
               {{ getC(show.contestnetId).name }} | עונה:{{
                 getC(show.contestnetId).session_number
@@ -44,17 +46,17 @@ export default {
     },
   },
   data() {
-    // https://res.cloudinary.com/diowvie2f/image/upload/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.gif
-    // https://res.cloudinary.com/diowvie2f/image/upload/f_auto,q_auto/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.gif
+    // https://res.cloudinary.com/diowvie2f/image/upload/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.webp
+    // https://res.cloudinary.com/diowvie2f/image/upload/f_auto,q_auto/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.webp
     return {
       shows: [
         {
-          publicId: 'v1623862283/danci-gadi_1_qfycii.gif',
+          publicId: 'v1623862283/danci-gadi_1_qfycii.webp',
           contestnetId: '6077fed6a93beac05efc6910',
           desc: 'דנסי',
         },
         {
-          publicId: 'v1623862022/ezgif-6-61643253f432_h7cmly.gif',
+          publicId: 'v1623862022/ezgif-6-61643253f432_h7cmly.webp',
           contestnetId: '6077fed6a93beac05efc6916',
           desc: 'יובל',
         },
@@ -64,22 +66,22 @@ export default {
           desc: 'חגי',
         },
         {
-          publicId: 'v1623837100/s4e14-chicken_ui3xl9.gif',
+          publicId: 'v1623837100/s4e14-chicken_ui3xl9.webp',
           contestnetId: '60b88f1accc85f85822661b1',
           desc: 'מריאז',
         },
         {
-          publicId: 'v1623837078/star-wars-s3e14_s10871.gif',
+          publicId: 'v1623837078/star-wars-s3e14_s10871.webp',
           contestnetId: '60b885e81653cc67f9aa7157',
           desc: 'גלית',
         },
         {
-          publicId: 'v1623831880/clown-s2e15_gumhwc.gif',
+          publicId: 'v1623831880/clown-s2e15_gumhwc.webp',
           contestnetId: '6077fed6a93beac05efc6933',
           desc: 'יוסקה',
         },
         {
-          publicId: 'v1623831891/circus-s3e2_osejzp.gif',
+          publicId: 'v1623831891/circus-s3e2_osejzp.webp',
           contestnetId: '60b88fc3ccc85f85822661c0',
           desc: 'נחמני',
         },

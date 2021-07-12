@@ -9,7 +9,7 @@
           flex
           justify-between
           py-3
-          px-6
+          sm:px-6
           bg-brand-300
           rounded-sm
           shadow

@@ -4,7 +4,7 @@
       not-eating
       my-10
       py-10
-      px-6
+      sm:px-6
       bg-brand-300
       border-t-2 border-brand-700 border-b-2
     "
@@ -12,12 +12,21 @@
     <blockquote class="text-brand-100 text-center font-thin mb-10 text-3xl">
       אני/אנחנו _________.
     </blockquote>
-    <div class="grid md:grid-cols-2 gap-y-1 gap-x-4">
-      <div v-for="c in ppls" :key="c.id" class="flex py-2 px-4 bg-brand shadow">
-        <span>"...{{ c.quote }}"</span>
-        <span class="mr-1 ml-4">|</span>
-        <span>{{ getC(c.id).name }},</span>
-        <span class="mr-1"> עונה:{{ getC(c.id).session_number }}</span>
+    <div class="grid md:grid-cols-2 gap-y-2 gap-x-4">
+      <div
+        v-for="c in ppls"
+        :key="c.id"
+        class="flex py-2 sm:px-4 bg-brand shadow px-1 tet-sm items-end"
+      >
+        <span class="text-xl">
+          <span class="font-mono text-2xl">"</span>
+          {{ c.quote.trim() }}
+          <span class="font-mono text-2xl">"</span>
+        </span>
+        <span class="text-sm mr-1 px-2 rounded bg-white bg-opacity-25">{{
+          getC(c.id).name
+        }}</span>
+        <!-- <span class="mr-1"> עונה:{{ getC(c.id).session_number }}</span> -->
       </div>
       <svg-winner class="mt-2 ml-6 flex justify-end" />
     </div>
@@ -44,11 +53,11 @@ export default {
         },
         {
           id: '6077fd498905dcba4d5a293a',
-          quote: ' באתי להיות ראשון ',
+          quote: ' באתי להיות ראשון',
         },
         {
           id: '6077fd498905dcba4d5a2938',
-          quote: ' באתי לנצח ',
+          quote: 'באתי לנצח',
         },
         {
           id: '6077fd498905dcba4d5a293e',

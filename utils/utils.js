@@ -204,7 +204,6 @@ export const getCountryId = (c) => {
     BY: `בלארוס`,
     CA: `קנדה`,
     UZ: `אוזבקיסטן`,
-    CU: `כורדיסטאן`,
   }
   for (const [key, value] of Object.entries(countreis)) {
     if (COUPLES_SESSIONS.includes(+c.session_number)) {
@@ -226,8 +225,8 @@ export const getCountryId = (c) => {
   }
 
   if (!countryCode && c.community) {
-    console.error(c.name)
-    console.error(c.community)
+    // console.error(c.name)
+    // console.error(c.community)
   }
   return countryCode
 }

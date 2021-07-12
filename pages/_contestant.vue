@@ -11,7 +11,8 @@
           flex
           items-center
           bg-brand-700
-          px-4
+          sm:px-4
+          px-1
           py-2
           rounded
           gap-x-4
@@ -23,13 +24,13 @@
         <svg-arrow-home class="w-6 fill-current" />
       </nuxt-link>
     </header>
-    <div class="py-6 px-4 mx-auto">
+    <div class="py-6 sm:px-4 mx-auto px-1">
       <article
         class="
           bg-brand-300
           rounded
           py-6
-          px-4
+          sm:px-4
           max-w-3xl
           shadow-lg
           mx-auto

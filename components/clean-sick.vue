@@ -4,7 +4,7 @@
       not-eating
       my-10
       py-10
-      px-6
+      sm:px-6
       bg-brand-300
       border-t-2 border-brand-700 border-b-2
     "

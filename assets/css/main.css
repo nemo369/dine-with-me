@@ -23,45 +23,11 @@ transition: background-color 0.2s ease-in-out;
 .text-brand-800{
 transition: color 0.2s ease-in-out;
 }
-@font-face {
-  font-family: "font";
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url("~assets/fonts/MPLUSRounded1c-Thin.ttf") format("truetype");
-}
-@font-face {
-  font-family: "font";
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url("~assets/fonts/MPLUSRounded1c-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "font";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("~assets/fonts/MPLUSRounded1c-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "font";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("~assets/fonts/MPLUSRounded1c-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "font";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("~assets/fonts/MPLUSRounded1c-Black.ttf") format("truetype");
-}
+
 
 body {
-  font-family: "font", sans-serif;
-  font-weight: 300;
+  /* font-family: "font", sans-serif; */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 .main-wrapper {
   /* background-color: #8acbf7; */
@@ -70,7 +36,7 @@ body {
   /* background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2NDAiPgoJPGRlZnM+CgkJPHN0eWxlPgoJCQlzdmcgewoJCQkJYmFja2dyb3VuZDojOGFjYmY3OwoJCQkJfQoJCQoJCQkuc3Ryb2tlIHsKCQkJCXN0cm9rZTojZmZmZmZmNjE7CgkJCQlmaWxsOiBub25lOwoJCQkJc3Ryb2tlLXdpZHRoOjI7CgoJCQkJfQoJCTwvc3R5bGU+CgkJPHBhdHRlcm4gaWQ9InNtYWxsLWdyaWQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KCQkJPHJlY3QgeD0iLTAuNSIgeT0iLTAuNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiBjbGFzcz0ic3Ryb2tlIi8+CgkJPC9wYXR0ZXJuPgoJCTxwYXR0ZXJuIGlkPSJiaWctZ3JpZCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEyNiIgaGVpZ2h0PSIxMjYiIHZpZXdCb3g9IjAgMCAxMjYgMTI2Ij4KCQkJPHJlY3QgeD0iLTAuNSIgeT0iLTAuNSIgd2lkdGg9IjEyNiIgaGVpZ2h0PSIxMjYiIGNsYXNzPSJzcXVhcmUiIGZpbGw9InVybCgjc21hbGwtZ3JpZCkiLz4KCQk8L3BhdHRlcm4+Cgk8L2RlZnM+Cgk8cmVjdCB4PSItMC41IiB5PSItMC41IiB3aWR0aD0iMTAwOCIgaGVpZ2h0PSI2MzAiIGZpbGw9InVybCgjYmlnLWdyaWQpIi8+Cjwvc3ZnPg=="); */
   background-size: cover;
   background-attachment: fixed;
-  background-size: 102% auto;
+  background-size: 102% swap;
 }
 main {
   margin-top: 24px;
@@ -90,3 +56,16 @@ main {
 .toglle-on-hover:hover .on-hover {
   display: block;
 }
+@media (min-width: 768px) {
+  .number {
+    font-size: 3.5rem;
+  }
+}
+img{
+  font-size: 12px;
+}
+/* @media (max-width: 320) {
+  html {
+    font-size:0.9vw;
+  }
+} */

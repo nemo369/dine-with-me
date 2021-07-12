@@ -1,6 +1,8 @@
 <template>
   <section class="section mb-28 mt-16">
-    <h2 class="subtitle tac my-6 flex justify-center text-xl font-light">
+    <h2
+      class="subtitle tac mt-32 mb-10 flex justify-center text-2xl font-light"
+    >
       <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900">
         על בואו לאכול איתי
       </span>
@@ -21,7 +23,7 @@
         <client-only>
           <cld-image
             loading="lazy"
-            class="float-left text-xs"
+            class="float-left text-xs ml-[60%]"
             public-id="v1618772206/%D7%A9%D7%99_%D7%90%D7%91%D7%99%D7%91%D7%99_ayzlm5.png"
             effect="trim"
             alt="שי אביבי"
@@ -40,7 +42,7 @@
       "
     >
       <common-box title="סוגי עונות">
-        <div class="flex gap-x-6">
+        <div class="flex gap-x-6 flex-wrap">
           <div class="flex gap-x-1">
             <svg-couple-waiter />
             <span>2</span>

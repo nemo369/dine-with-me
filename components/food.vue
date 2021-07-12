@@ -1,7 +1,9 @@
 <template>
   <section class="section mb-28 mt-16">
-    <h3 class="subtitle tac my-6 flex justify-center text-xl font-light">
-      <span class="py-1 px-6 bg-brand-100 rounded shadow text-brand-900">
+    <h3
+      class="subtitle tac mt-32 mb-10 flex justify-center text-2xl font-light"
+    >
+      <span class="py-1 sm:px-6 bg-brand-100 rounded shadow text-brand-900">
         אוכל
       </span>
     </h3>
@@ -63,14 +65,18 @@
         </ul>
       </common-box>
       <common-box :title="`״לא אוכל חיות מתות״`">
-        <div class="min-w-30">
+        <div class="md:min-w-30">
           <div class="text-2xl">{{ vegan.length }} צמחונים</div>
           <div class="text-2xl">{{ vegetarian.length }} טבעונים</div>
         </div>
       </common-box>
     </div>
     <div class="md:flex justify-between gap-x-8 mb-12">
-      <common-box v-if="coscos" title="קוסקוס" class="flex-grow">
+      <common-box
+        v-if="coscos"
+        title="קוסקוס - גם ביתי וגם משקית"
+        class="flex-grow"
+      >
         <div class="flex flex-wrap max-w-2xl">
           <div
             v-for="(contestant, index) in coscos"
@@ -92,7 +98,7 @@
                 on-hover
                 absolute
                 bg-brand-700
-                px-4
+                sm:px-4
                 py-2
                 rounded
                 top-[90%]
@@ -111,7 +117,7 @@
                 on-hover
                 absolute
                 bg-brand-700
-                px-4
+                sm:px-4
                 py-2
                 rounded
                 top-[90%]
@@ -129,7 +135,7 @@
                 on-hover
                 absolute
                 bg-brand-700
-                px-4
+                sm:px-4
                 py-2
                 rounded
                 top-[90%]
@@ -154,9 +160,12 @@
             :key="index"
             class="my-6 px-3 leading-4 text-sm"
           >
-            <span v-if="contestant.course" class="w-3/6 text-base"
-              >{{ contestant.course[0] }} -
-              <span class="font-thin text-sm">{{ contestant.course[1] }}</span>
+            <span v-if="contestant.course" class="w-3/6 text-base">
+              <span v-html="findWord(contestant.course[0])"></span>
+              <span
+                class="font-thin text-sm"
+                v-html="findWord(contestant.course[1])"
+              ></span>
             </span>
             <span class="bg-brand-700 px-2 py-1 rounded text-xs">{{
               contestant.name
@@ -308,6 +317,22 @@ export default {
           return false
         }),
       ]
+    },
+  },
+  methods: {
+    findWord(sentence) {
+      if (!sentence) return ''
+      const word = `סבתא`
+      const index = sentence.indexOf(word)
+      if (index === -1) return sentence
+
+      return (
+        sentence.substring(0, index) +
+        "<span class='bg-white bg-opacity-10 rounded px-1'>" +
+        sentence.substring(index, index + word.length) +
+        '</span>' +
+        sentence.substring(index + word.length)
+      )
     },
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="box flex-grow">
-    <h4 class="pb-2">{{ title }}</h4>
+    <h4 class="pb-2 text-xl">{{ title }}</h4>
     <svg-hr />
     <div class="number text-5xl mt-2">
       <span v-if="number">{{ number }}</span>

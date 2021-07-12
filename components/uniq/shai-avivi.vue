@@ -20,7 +20,7 @@
           class="
             flex
             py-3
-            px-6
+            sm:px-6
             bg-brand-300
             hover:bg-brand
             rounded-sm
@@ -56,6 +56,14 @@
         :number="both.length"
       >
       </common-box>
+      <cld-image
+        loading="lazy"
+        public-id="v1626109965/download_1_aoj8v9.jpg"
+        fetch-format="auto"
+        quality="auto"
+        class="rounded mt-4 mx-auto"
+        :alt="`זה נקרא: אבחר ממסדר המציונות הלאומית`"
+      />
     </div>
   </section>
 </template>

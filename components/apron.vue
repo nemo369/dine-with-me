@@ -1,7 +1,7 @@
 <template>
   <section class="section mb-28 mt-16">
     <h4 class="text-center mb-6 text-2xl">סינרים</h4>
-    <ul class="md:grid md:grid-cols-3 gap-x-4cx gap-y-10">
+    <ul class="md:grid md:grid-cols-3 gap-x-4 cx gap-y-10">
       <li v-for="apron in aprons" :key="apron.publicId" class="mb-10">
         <client-only>
           <cld-image
@@ -14,7 +14,7 @@
           />
         </client-only>
         <div class="mt-4 flex">
-          <span class="bg-brand-700 rounded px-4 py-2 mx-auto">{{
+          <span class="bg-brand-700 rounded sm:px-4 py-2 mx-auto px-1">{{
             getC(apron.contestnetId).name
           }}</span>
         </div>

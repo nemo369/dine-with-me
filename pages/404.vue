@@ -3,7 +3,7 @@
     <header>
       <span></span>
       <nuxt-link to="/">
-        <span class="bg-brand-700 px-4 py-2 rounded">חזרה לעמוד הבית</span>
+        <span class="bg-brand-700 sm:px-4 py-2 rounded">חזרה לעמוד הבית</span>
       </nuxt-link>
     </header>
     <h1>עמוד 404</h1>

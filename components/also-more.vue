@@ -23,14 +23,15 @@
               :src="getC(c.id).avatar"
               width="120"
             />
-            <div class="mt-7">
+            <div class="-mt-1">
               <div v-if="c.detail" class="text-sm text">*{{ c.detail }}</div>
 
               <div
                 class="
                   mt-1
                   bg-brand-700
-                  px-4
+                  sm:px-4
+                  px-1
                   py-2
                   text-center text-2xl
                   rounded
@@ -86,7 +87,7 @@ export default {
         },
         {
           id: '60b88f1accc85f85822661af',
-          desc: 'פיצה ודובית',
+          desc: 'פיצית ודובית',
           detail: '',
         },
         {

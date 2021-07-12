@@ -4,12 +4,20 @@
       not-eating
       my-10
       py-10
-      px-6
+      sm:px-6
       bg-brand-300
       border-t-2 border-brand-700 border-b-2
     "
   >
     <blockquote class="text-brand-100 text-center font-thin mb-10 text-3xl">
+      <cld-image
+        loading="lazy"
+        public-id="v1626109173/download_bgrml0.jpg"
+        fetch-format="auto"
+        quality="auto"
+        class="rounded mt-4 mx-auto"
+        :alt="`סימה דהן - אני לא אוכלת בשר בכלל, הדבר היחיד שאני אוכלת זה בשר טחון`"
+      />
       <span class="text-5xl text-whit font-serif">"</span>
       אני לא אוכל/ת _________.
       <span
@@ -21,10 +29,14 @@
       <div
         v-for="c in ppls"
         :key="c.id"
-        class="flex justify-between py-2 px-4 bg-brand shadow"
+        class="flex gap-x-1 py-2 sm:px-4 bg-brand shadow"
       >
-        <span class="w-4/6">"{{ c.text }}"</span>
-        <span>{{ c.name }}</span>
+        <span class="w-4/6 text-lg">"{{ c.text }}"</span>
+        <span class="flex items-end text-sm">
+          <span class="bg-white bg-opacity-25 rounded px-2 h-auto">{{
+            c.name
+          }}</span>
+        </span>
         <!-- <span>s:{{ c.s }},e:{{ c.name }}</span> -->
       </div>
     </div>
