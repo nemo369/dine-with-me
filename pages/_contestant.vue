@@ -24,7 +24,7 @@
         <svg-arrow-home class="w-6 fill-current" />
       </nuxt-link>
     </header>
-    <div class="py-6 sm:px-4 mx-auto px-1">
+    <div v-if="contestant" class="py-6 sm:px-4 mx-auto px-1">
       <article
         class="
           bg-brand-300
@@ -144,7 +144,7 @@
 </template>
 <script>
 export default {
-  async asyncData({ params, payload }) {
+  async asyncData({ payload, params }) {
     if (payload) return { contestant: payload }
     const { API_ENDPOINT } = process.env
     const contestant = await fetch(
@@ -155,7 +155,6 @@ export default {
   data() {
     return {
       contestant: null,
-      mountains: [],
     }
   },
   // call fetch only on client-side

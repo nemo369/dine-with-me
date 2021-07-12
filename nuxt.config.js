@@ -6,6 +6,7 @@ const dynamicRoutes = () => {
     .get(`${process.env.API_ENDPOINT}contestants?_limit=-1`)
     .then((res) => {
       return res.data.map((contestant) => {
+        console.log(res.data)
         return {
           route: '/' + contestant.id,
           payload: contestant,
@@ -19,7 +20,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'dine-with-me',
+    title: 'בואו לאכול איתי ישראל',
     htmlAttrs: {
       lang: 'he',
       dir: 'rtl',
@@ -82,8 +83,6 @@ export default {
     useComponent: true, // use Vue components
   },
   generate: {
-    generate: {
-      routes: dynamicRoutes,
-    },
+    routes: dynamicRoutes,
   },
 }
