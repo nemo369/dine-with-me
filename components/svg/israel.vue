@@ -129,7 +129,7 @@ import {
   randomValue,
 } from '../../utils/utils'
 export default {
-  props: ['contestants', 'weeks'],
+  props: ['contestants', 'weeks', 'entities'],
   data() {
     return { render: false, showToltip: false, style: '', toolTipText: '' }
   },

@@ -66,7 +66,7 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
 
   computed: {
     bigBrother() {
@@ -79,10 +79,12 @@ export default {
       return this.contestants.filter((c) => c.reality.includes('גולסטאר'))
     },
     gadi() {
-      return this.contestants.find((c) => c.name === 'גדי חפר')
+      return this.contestants['6077fed6a93beac05efc6910'] || {}
+      // return this.contestants.find((c) => c.name === 'גדי חפר')
     },
     hagi() {
-      return this.contestants.find((c) => c.name.includes('חגי הספורטאי'))
+      return this.entities['60b8867b1653cc67f9aa7182'] || {}
+      // return this.contestants.find((c) => c.name.includes('חגי הספורטאי'))
     },
   },
 }

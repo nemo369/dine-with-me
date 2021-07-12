@@ -179,6 +179,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    entities: {
+      type: Object,
+      default: () => {},
+    },
   },
   computed: {
     longest() {

@@ -1359,7 +1359,7 @@
 <script>
 import { getCountryEmoji, getCountryId, shuffle } from '../../utils/utils'
 export default {
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
 
   computed: {
     locations() {

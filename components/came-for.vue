@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
   data() {
     return {
       ppls: [
@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     getC(id) {
-      return this.contestants?.find((c) => c.id === id)
+      return this.entities[id]
     },
   },
 }

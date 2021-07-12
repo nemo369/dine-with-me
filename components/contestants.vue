@@ -5,7 +5,7 @@
         >המשתתפים</span
       >
     </h3>
-    <clean-sick :contestants="contestants" />
+    <clean-sick :contestants="contestants" :entities="entities" />
 
     <div class="grid md:grid-cols-2 justify-between gap-x-8 mb-12">
       <common-box title="חלוקה מגדרית">
@@ -21,7 +21,7 @@
       <common-box title="ממוצע גילים" :number="ages"></common-box>
     </div>
     <div class="flex justify-center gap-x-8 mb-12">
-      <svg-israel :contestants="contestants"></svg-israel>
+      <svg-israel :contestants="contestants" :entities="entities"></svg-israel>
     </div>
     <div class="lg:flex justify-between gap-x-8 mb-12">
       <common-box title="המשתתפים הגרועים ביותר">
@@ -39,7 +39,7 @@
         />
       </common-box>
     </div>
-    <uniq-realty :contestants="contestants" />
+    <uniq-realty :contestants="contestants" :entities="entities" />
     <div class="md:flex justify-around gap-x-8 mb-12">
       <common-box title="עורכי דין" :number="lawyrs.length"> </common-box>
       <common-box title="LGBTQ 🏳️‍🌈" :number="lgbtq.length"> </common-box>
@@ -86,8 +86,8 @@
     </div>
     <not-eating />
     <div class="lg:flex justify-between gap-x-8 mb-12">
-      <uniq-sessions :contestants="contestants" />
-      <uniq-order :contestants="contestants" />
+      <uniq-sessions :contestants="contestants" :entities="entities" />
+      <uniq-order :contestants="contestants" :entities="entities" />
       <common-box v-if="beniamin" title="משתתפים שנפסלו">
         <div class="flex justify-between items-center">
           <div class="number">1</div>
@@ -110,6 +110,10 @@
 import { COUPLES_SESSIONS } from '../utils/utils'
 export default {
   props: {
+    entities: {
+      type: Object,
+      default: () => {},
+    },
     contestants: {
       type: Array,
       default: () => [],
@@ -119,7 +123,7 @@ export default {
       default: () => [],
     },
   },
-  // props: ['contestants', 'weeks'],
+  // props: ['contestants', 'weeks', 'entities'],
   data() {
     return {
       laugh: [
@@ -204,7 +208,7 @@ export default {
   },
   methods: {
     getC(id) {
-      return this.contestants?.find((c) => c.id === id) || {}
+      return this.entities[id]
     },
   },
 }

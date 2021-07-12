@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
 
   data() {
     return {
@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     getC(id) {
-      return this.contestants?.find((c) => c.id === id)
+      return this.entities[id]
     },
   },
 }

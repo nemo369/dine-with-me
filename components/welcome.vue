@@ -36,7 +36,7 @@
 <script>
 export default {
   name: 'Welcome',
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
   data() {
     return {
       totalSessions: 4,

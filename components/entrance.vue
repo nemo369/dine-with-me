@@ -40,6 +40,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    entities: {
+      type: Object,
+      default: () => {},
+    },
   },
   data() {
     return {
@@ -79,7 +83,7 @@ export default {
   },
   methods: {
     getC(id) {
-      return this.contestants?.find((c) => c.id === id)
+      return this.entities[id]
     },
   },
 }

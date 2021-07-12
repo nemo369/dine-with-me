@@ -5,10 +5,10 @@
         >👨‍🍳</span
       >
     </h3>
-    <recycle :contestants="contestants" />
+    <recycle :contestants="contestants" :entities="entities" />
     <div class="md:flex justify-center gap-x-10 mt-10">
-      <cook-at :contestants="contestants" />
-      <dishes :contestants="contestants" />
+      <cook-at :contestants="contestants" :entities="entities" />
+      <dishes :contestants="contestants" :entities="entities" />
     </div>
   </section>
 </template>
@@ -19,6 +19,10 @@ export default {
     contestants: {
       type: Array,
       default: () => [],
+    },
+    entities: {
+      type: Object,
+      default: () => {},
     },
   },
 }

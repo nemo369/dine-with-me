@@ -38,6 +38,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    entities: {
+      type: Object,
+      default: () => {},
+    },
   },
   data() {
     // https://res.cloudinary.com/diowvie2f/image/upload/v1623862254/ezgif-6-52511ed9a7ef_jdvvg5.gif
@@ -84,7 +88,7 @@ export default {
   },
   methods: {
     getC(id) {
-      return this.contestants?.find((c) => c.id === id)
+      return this.entities[id]
     },
   },
 }

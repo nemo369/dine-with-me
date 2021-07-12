@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
   data() {
     return {
       labels: {

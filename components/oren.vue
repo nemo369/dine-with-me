@@ -40,10 +40,10 @@
 
 <script>
 export default {
-  props: ['contestants'],
+  props: ['contestants', 'entities'],
   computed: {
     oren() {
-      return this.contestants?.find((c) => c.name?.includes('אורן חזן'))
+      return this.entities['6077fe568905dcba4d5a294c']
     },
   },
 }

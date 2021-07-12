@@ -59,7 +59,7 @@
 <script>
 import { COUPLES_SESSIONS } from '../utils/utils'
 export default {
-  props: ['contestants', 'weeks'],
+  props: ['contestants', 'weeks', 'entities'],
   computed: {
     contestantsNumber() {
       let total = 0
