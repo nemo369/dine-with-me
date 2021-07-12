@@ -11,7 +11,7 @@
         rounded
       "
     >
-      <h3 class="text-lg">השבוע בבואו לאכול איתי אנחנו ב</h3>
+      <h3 class="text-lg underline">:השבוע בבואו לאכול איתי אנחנו ב</h3>
       <ol class="flex flex-col gap-y-1">
         <li v-for="(location, index) in locations" :key="index">
           {{ indexText(location) }}

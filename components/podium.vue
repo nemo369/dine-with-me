@@ -1,6 +1,6 @@
 <template>
-  <div v-if="reArragne">
-    <div class="podium py-3 max-w-full overflow-y-auto">
+  <div v-if="reArragne" class="overflow-y-auto max-w-full">
+    <div class="podium py-3 w-max">
       <div class="flex items-end gap-12 justify-center podium-rows text-white">
         <div
           v-for="(contestant, index) in reArragne"

@@ -27,7 +27,7 @@
           </div>
         </div>
       </common-box>
-      <common-box title="ממוצע גילים" :number="ages"></common-box>
+      <common-box title="ממוצע גילאים" :number="ages"></common-box>
     </div>
     <div class="flex justify-center gap-x-8 mb-12">
       <svg-israel :contestants="contestants" :entities="entities"></svg-israel>
