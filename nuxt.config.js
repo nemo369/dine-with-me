@@ -1,5 +1,13 @@
+import axios from 'axios'
 require('dotenv').config()
 
+const dynamicRoutes = () => {
+  return axios
+    .get(`${process.env.API_ENDPOINT}contestants?_limit=-1`)
+    .then((res) => {
+      return res.data.map((contestant) => `/${contestant.id}`)
+    })
+}
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -61,5 +69,21 @@ export default {
     apiKey: process.env.API_KEY, // only needed if you are using server-side upload
     apiSecret: process.env.API_SECRET, // only needed if you are using server-side upload
     useComponent: true, // use Vue components
+  },
+  generate: {
+    generate: {
+      routes() {
+        return axios
+          .get(`${process.env.API_ENDPOINT}contestants?_limit=-1`)
+          .then((res) => {
+            return res.data.map((contestant) => {
+              return {
+                route: '/' + contestant.id,
+                payload: contestant,
+              }
+            })
+          })
+      },
+    },
   },
 }

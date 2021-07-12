@@ -141,19 +141,19 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      contestant: null,
-    }
-  },
-  async fetch({ params }) {
+  async asyncData({ params, payload }) {
+    if (payload) return { contestant: payload }
     const { API_ENDPOINT } = process.env
     const contestant = await fetch(
       `${API_ENDPOINT}contestants/${params.contestant}`
     ).then((res) => res.json())
-    this.contestant = contestant
-
-    // return { contestant }
+    return { contestant }
+  },
+  data() {
+    return {
+      contestant: null,
+      mountains: [],
+    }
   },
   // call fetch only on client-side
   // fetchOnServer: false,

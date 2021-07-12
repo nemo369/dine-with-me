@@ -49,7 +49,7 @@ export default {
     return {
       entrances: [
         {
-          publicId: 'v1623862532/ezgif-6-4d60609cc034_upeess.gif',
+          publicId: 'v1623862532/ezgif-6-4d60609cc034_upeess.webp',
           contestnetId: '6077fd498905dcba4d5a292f',
           desc: 'יורם',
         },
