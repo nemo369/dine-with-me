@@ -11,3 +11,6 @@ Dev & Design:[nemo](https://www.naamanfrenkel.dev)
 
 from strapi
 [herokuapp](https://protected-shore-74105.herokuapp.com/)
+[contestants](https://protected-shore-74105.herokuapp.com/contestants)
+[contestant](https://protected-shore-74105.herokuapp.com/contestants/{id})
+[weeks](https://protected-shore-74105.herokuapp.com/weeks)
