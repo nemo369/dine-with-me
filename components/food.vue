@@ -147,6 +147,15 @@
               }}</span>
             </span>
           </div>
+          <cld-image
+            loading="lazy"
+            public-id="v1626157528/s1e31_Moment_yhou08.jpg"
+            fetch-format="auto"
+            quality="auto"
+            class="rounded mt-6 ml-auto"
+            width="450"
+            :alt="`אני היחיד שעליתי על זה שהקוסקוס הוא לא ביתי`"
+          />
         </div>
       </common-box>
       <common-box

@@ -3,6 +3,9 @@
     <div class="main-wrapper flex justify-center items-center bg-brand-300">
       <Nuxt />
     </div>
+    <div class="hidden">
+      <img :src="require(`~/assets/image.png`)" />
+    </div>
     <div
       class="div py-3 bg-gray-700 text-brand-100 justify-center flex-col flex"
     >

@@ -17,12 +17,26 @@
             :key="c.id"
             class="mx-auto pb-8 pt-1 h-full flex-col flex justify-between"
           >
+            <!-- v1626156752/crisy_and_yahial_i8nx4z.png -->
             <common-sticker
+              v-if="c.id !== '60b8867b1653cc67f9aa7176'"
               :id="c.id"
               :name="getC(c.id).name"
               :src="getC(c.id).avatar"
               width="120"
             />
+            <common-sticker
+              v-if="c.id === '60b8867b1653cc67f9aa7176'"
+              :id="c.id"
+              :name="'יחיאל חזן כריסטי'"
+              :src="{
+                provider_metadata: {
+                  public_id: 'v1626156752/crisy_and_yahial_i8nx4z.png',
+                },
+              }"
+              width="120"
+            />
+
             <div class="-mt-1">
               <div v-if="c.detail" class="text-sm text">*{{ c.detail }}</div>
 
@@ -62,11 +76,11 @@ export default {
           id: '60b88fc3ccc85f85822661bd',
           desc: 'בייבי',
         },
-        {
-          id: '60b88f1accc85f85822661b1',
-          desc: 'נמייה',
-          detail: `רייצ׳ל לורד`,
-        },
+        // {
+        //   id: '60b88f1accc85f85822661b1',
+        //   desc: 'נמייה',
+        //   detail: `רייצ׳ל לורד`,
+        // },
         {
           id: '60b88fc3ccc85f85822661c4',
           desc: 'שוש',
@@ -80,11 +94,11 @@ export default {
           id: '60b88fc3ccc85f85822661c7',
           desc: 'אוזה ובאבא',
         },
-        {
-          id: '60b88f1accc85f85822661ad',
-          desc: 'חן וחנוני',
-          detail: 'למשתתפים חן וענר',
-        },
+        // {
+        //   id: '60b88f1accc85f85822661ad',
+        //   desc: 'חן וחנוני',
+        //   detail: 'למשתתפים חן וענר',
+        // },
         {
           id: '60b88f1accc85f85822661af',
           desc: 'פיצית ודובית',
@@ -105,15 +119,15 @@ export default {
           desc: 'ארנונילי',
           detail: '',
         },
-        {
-          id: '60b88f1accc85f85822661b5',
-          desc: 'יוגב ושרית',
-          detail: 'מכנה את המתמודדים קובי ולנה',
-        },
+        // {
+        //   id: '60b88f1accc85f85822661b5',
+        //   desc: 'יוגב ושרית',
+        //   detail: 'מכנה את המתמודדים קובי ולנה',
+        // },
         {
           id: '60b8867b1653cc67f9aa7180',
           desc: 'נש',
-          detail: '',
+          detail: '*פאן פאקט: תימור שיחקה את סאלי בסדרה המפקדת',
         },
       ],
     }

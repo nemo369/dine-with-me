@@ -4,8 +4,8 @@
       class="
         subtitle
         tac
-        lg:mt-32
-        mt-6
+        lg:mt-6
+        mt-2
         mb-10
         flex
         justify-center

@@ -46,8 +46,9 @@ export default {
       title: 'בואו לאכול איתי עונת הסטטיסטיקות',
       description:
         'סטטיסטיקות ועובדות מורכבות לאורך כל העונות של בואו לאכול איתי',
-      image: 'http://dinewithme.co.il/image.png',
+      image: 'https://res.cloudinary.com/diowvie2f/image/upload/v1626200336/image_b6njpl.png',
     }
+
   },
   async fetch() {
     const weeks = await fetch(

@@ -94,7 +94,18 @@
     </div>
     <div class="md:flex justify-between gap-x-8 mb-12">
       <common-box title="התקפי צחוק" :number="laugh.length"> </common-box>
-      <common-box title="מתמודדים שבכו" :number="cry.length"> </common-box>
+      <common-box title="מתמודדים שבכו">
+        <div class="nubmer">{{ cry.length }}</div>
+        <cld-image
+          loading="lazy"
+          public-id="v1626156424/s2e4_Moment_ykrfgk.jpg"
+          fetch-format="auto"
+          quality="auto"
+          class="rounded mt-4 ml-auto"
+          width="450"
+          :alt="`לבכות? איך אתה לא חשבת על זה? איך?`"
+        />
+      </common-box>
     </div>
     <not-eating />
     <div class="lg:flex justify-between gap-x-8 mb-12">

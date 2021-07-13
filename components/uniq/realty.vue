@@ -79,7 +79,7 @@ export default {
       return this.contestants.filter((c) => c.reality.includes('גולסטאר'))
     },
     gadi() {
-      return this.contestants['6077fed6a93beac05efc6910'] || {}
+      return this.entities['6077fed6a93beac05efc6910'] || {}
       // return this.contestants.find((c) => c.name === 'גדי חפר')
     },
     hagi() {

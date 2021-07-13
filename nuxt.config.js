@@ -49,6 +49,7 @@ export default {
   plugins: [
     { src: '~/plugins/trendChart.js', ssr: false },
     { src: '~/plugins/cloudinary.js', ssr: true },
+    { src: '~/plugins/gTag.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -63,19 +64,19 @@ export default {
     // Doc: https://cloudinary.nuxtjs.org/setup
     '@nuxtjs/cloudinary',
     // https://google-analytics.nuxtjs.org/setup
-    '@nuxtjs/google-analytics',
+    // '@nuxtjs/google-analytics',
   ],
   tailwindcss: {
     jit: true,
   },
-  googleAnalytics: {
-    id: 'G-JXW7YFQ3NG',
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: 'G-JXW7YFQ3NG',
-    },
-  },
+  // googleAnalytics: {
+  //   id: 'G-JXW7YFQ3NG',
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: 'G-JXW7YFQ3NG',
+  //   },
+  // },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/cloudinary'],
 

@@ -51,7 +51,7 @@ export default {
           contestnetId: '60b88fc3ccc85f85822661ca',
         },
         {
-          publicId: 'v1623763957/ysgev_b2waxv.png',
+          publicId: 'v1626156431/ysgev_rbnqj5.png',
           contestnetId: '60b88fc3ccc85f85822661c6',
         },
         {
