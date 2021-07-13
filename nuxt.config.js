@@ -69,7 +69,12 @@ export default {
     jit: true,
   },
   googleAnalytics: {
-    id: 'G-3T6HXSXPJ9',
+    id: 'G-JXW7YFQ3NG',
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: 'G-JXW7YFQ3NG',
+    },
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/cloudinary'],
